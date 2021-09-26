@@ -214,7 +214,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="libraries-and-packages.html"><a href="libraries-and-packages.html"><i class="fa fa-check"></i><b>7</b> Libraries and packages</a></li>
 <li class="divider"></li>
-<li><a href="https://creativecommons.org/licenses/by/4.0/" target="blank">Steve Haroz CC-BY</a></li><? if($_SERVER['HTTP_HOST'] !== 'localhost'){ ?> <!-- StatCounter --> <script type="text/javascript"> sc_project=1771316; sc_invisible=1; sc_partition=16; sc_security="caf1424b"; </script> <script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a href="http://www.statcounter.com/" target="_blank"><img class="statcounter" src="http://c17.statcounter.com/1771316/0/caf1424b/1/" alt="hit counter code" /></a></div></noscript> <!-- End StatCounter --> <? } ?>
+<li><a href="https://creativecommons.org/licenses/by/4.0/" target="blank">Steve Haroz CC-BY</a></li> <!-- StatCounter --> <script type="text/javascript"> sc_project=1771316; sc_invisible=1; sc_partition=16; sc_security="caf1424b"; </script> <script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a href="http://www.statcounter.com/" target="_blank"><img class="statcounter" src="http://c17.statcounter.com/1771316/0/caf1424b/1/" alt="hit counter code" /></a></div></noscript> <!-- End StatCounter -->
 
 </ul>
 
@@ -343,19 +343,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Create an array with many repeating values</p>
 <div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="types.html#cb189-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;hello&quot;</span>, <span class="st">&quot;cruel&quot;</span>, <span class="st">&quot;world&quot;</span>), <span class="dv">12</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
 <span id="cb189-2"><a href="types.html#cb189-2" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
-<pre><code>##  [1] &quot;world&quot; &quot;world&quot; &quot;cruel&quot; &quot;hello&quot; &quot;cruel&quot; &quot;world&quot; &quot;cruel&quot; &quot;world&quot; &quot;hello&quot;
-## [10] &quot;world&quot; &quot;cruel&quot; &quot;cruel&quot;</code></pre>
+<pre><code>##  [1] &quot;hello&quot; &quot;world&quot; &quot;cruel&quot; &quot;world&quot; &quot;world&quot; &quot;hello&quot; &quot;world&quot; &quot;world&quot; &quot;hello&quot;
+## [10] &quot;world&quot; &quot;hello&quot; &quot;hello&quot;</code></pre>
 <p>Make it into a <code>factor</code></p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="types.html#cb191-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">factor</span>(data)</span>
 <span id="cb191-2"><a href="types.html#cb191-2" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
-<pre><code>##  [1] world world cruel hello cruel world cruel world hello world cruel cruel
+<pre><code>##  [1] hello world cruel world world hello world world hello world hello hello
 ## Levels: cruel hello world</code></pre>
 <p><em>Note: The values are in the order they appear in the array</em></p>
 <p>The array is now an integer array with a dictionary</p>
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="types.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(data)</span></code></pre></div>
-<pre><code>##  [1] 3 3 1 2 1 3 1 3 2 3 1 1</code></pre>
+<pre><code>##  [1] 2 3 1 3 3 2 3 3 2 3 2 2</code></pre>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="types.html#cb195-1" aria-hidden="true" tabindex="-1"></a>data[<span class="dv">5</span>]</span></code></pre></div>
-<pre><code>## [1] cruel
+<pre><code>## [1] world
 ## Levels: cruel hello world</code></pre>
 <p>See the different values in the array</p>
 <div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="types.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(data)</span></code></pre></div>
