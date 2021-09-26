@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Control Flow | A Succinct Intro to R</title>
+  <meta name="description" content="<p>This book is intended as a short introduction to the R language.
+It covers the basics of R and is intended as a prequal to analysis and visualization guides like “R for Data Science”.
+This guide assumes you are familiar with programming concepts but want to learn the R language specifically.</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Control Flow | A Succinct Intro to R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>This book is intended as a short introduction to the R language.
+It covers the basics of R and is intended as a prequal to analysis and visualization guides like “R for Data Science”.
+This guide assumes you are familiar with programming concepts but want to learn the R language specifically.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Control Flow | A Succinct Intro to R" />
+  
+  <meta name="twitter:description" content="<p>This book is intended as a short introduction to the R language.
+It covers the basics of R and is intended as a prequal to analysis and visualization guides like “R for Data Science”.
+This guide assumes you are familiar with programming concepts but want to learn the R language specifically.</p>" />
+  
+
+<meta name="author" content="Steve Haroz" />
+
+
+<meta name="date" content="2021-01-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="types.html"/>
+<link rel="next" href="functions.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Succinct Intro to R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html"><i class="fa fa-check"></i><b>1</b> Variables, Math, Comparisons, and Strings</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#help"><i class="fa fa-check"></i><b>1.1</b> Help</a></li>
+<li class="chapter" data-level="1.2" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#assignment"><i class="fa fa-check"></i><b>1.2</b> Assignment</a></li>
+<li class="chapter" data-level="1.3" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#console-output"><i class="fa fa-check"></i><b>1.3</b> Console Output</a></li>
+<li class="chapter" data-level="1.4" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#math"><i class="fa fa-check"></i><b>1.4</b> Math</a></li>
+<li class="chapter" data-level="1.5" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#comparisons"><i class="fa fa-check"></i><b>1.5</b> Comparisons</a></li>
+<li class="chapter" data-level="1.6" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#boolean"><i class="fa fa-check"></i><b>1.6</b> Boolean</a></li>
+<li class="chapter" data-level="1.7" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#strings"><i class="fa fa-check"></i><b>1.7</b> Strings</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#string-concatenation"><i class="fa fa-check"></i><b>1.7.1</b> String Concatenation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="arrays.html"><a href="arrays.html"><i class="fa fa-check"></i><b>2</b> Arrays</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="arrays.html"><a href="arrays.html#everything-is-an-array"><i class="fa fa-check"></i><b>2.1</b> Everything is an array</a></li>
+<li class="chapter" data-level="2.2" data-path="arrays.html"><a href="arrays.html#creation"><i class="fa fa-check"></i><b>2.2</b> Creation</a></li>
+<li class="chapter" data-level="2.3" data-path="arrays.html"><a href="arrays.html#array-generators"><i class="fa fa-check"></i><b>2.3</b> Array generators</a></li>
+<li class="chapter" data-level="2.4" data-path="arrays.html"><a href="arrays.html#concatenation"><i class="fa fa-check"></i><b>2.4</b> Concatenation</a></li>
+<li class="chapter" data-level="2.5" data-path="arrays.html"><a href="arrays.html#indexing"><i class="fa fa-check"></i><b>2.5</b> Indexing</a></li>
+<li class="chapter" data-level="2.6" data-path="arrays.html"><a href="arrays.html#sampling-from-an-array"><i class="fa fa-check"></i><b>2.6</b> Sampling from an Array</a></li>
+<li class="chapter" data-level="2.7" data-path="arrays.html"><a href="arrays.html#array-constants"><i class="fa fa-check"></i><b>2.7</b> Array constants</a></li>
+<li class="chapter" data-level="2.8" data-path="arrays.html"><a href="arrays.html#array-operations"><i class="fa fa-check"></i><b>2.8</b> Array operations</a></li>
+<li class="chapter" data-level="2.9" data-path="arrays.html"><a href="arrays.html#array-functions"><i class="fa fa-check"></i><b>2.9</b> Array functions</a></li>
+<li class="chapter" data-level="2.10" data-path="arrays.html"><a href="arrays.html#array-sorting"><i class="fa fa-check"></i><b>2.10</b> Array sorting</a></li>
+<li class="chapter" data-level="2.11" data-path="arrays.html"><a href="arrays.html#test-membership"><i class="fa fa-check"></i><b>2.11</b> Test membership</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="types.html"><a href="types.html"><i class="fa fa-check"></i><b>3</b> Types</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="types.html"><a href="types.html#numbers"><i class="fa fa-check"></i><b>3.1</b> Numbers</a></li>
+<li class="chapter" data-level="3.2" data-path="types.html"><a href="types.html#strings-1"><i class="fa fa-check"></i><b>3.2</b> Strings</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="types.html"><a href="types.html#concatenation-1"><i class="fa fa-check"></i><b>3.2.1</b> Concatenation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="types.html"><a href="types.html#dates"><i class="fa fa-check"></i><b>3.3</b> Dates</a></li>
+<li class="chapter" data-level="3.4" data-path="types.html"><a href="types.html#finding-the-type-of-a-variable"><i class="fa fa-check"></i><b>3.4</b> Finding the type of a variable</a></li>
+<li class="chapter" data-level="3.5" data-path="types.html"><a href="types.html#checking-the-type"><i class="fa fa-check"></i><b>3.5</b> Checking the type</a></li>
+<li class="chapter" data-level="3.6" data-path="types.html"><a href="types.html#converting-and-parsing"><i class="fa fa-check"></i><b>3.6</b> Converting and parsing</a></li>
+<li class="chapter" data-level="3.7" data-path="types.html"><a href="types.html#special-types"><i class="fa fa-check"></i><b>3.7</b> Special types</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="types.html"><a href="types.html#na"><i class="fa fa-check"></i><b>3.7.1</b> NA</a></li>
+<li class="chapter" data-level="3.7.2" data-path="types.html"><a href="types.html#factor"><i class="fa fa-check"></i><b>3.7.2</b> Factor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="control-flow.html"><a href="control-flow.html"><i class="fa fa-check"></i><b>4</b> Control Flow</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="control-flow.html"><a href="control-flow.html#if"><i class="fa fa-check"></i><b>4.1</b> If</a></li>
+<li class="chapter" data-level="4.2" data-path="control-flow.html"><a href="control-flow.html#while"><i class="fa fa-check"></i><b>4.2</b> While</a></li>
+<li class="chapter" data-level="4.3" data-path="control-flow.html"><a href="control-flow.html#for"><i class="fa fa-check"></i><b>4.3</b> For</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>5</b> Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="functions.html"><a href="functions.html#parameters"><i class="fa fa-check"></i><b>5.1</b> Parameters</a></li>
+<li class="chapter" data-level="5.2" data-path="functions.html"><a href="functions.html#scope"><i class="fa fa-check"></i><b>5.2</b> Scope</a></li>
+<li class="chapter" data-level="5.3" data-path="functions.html"><a href="functions.html#a-function-in-a-function"><i class="fa fa-check"></i><b>5.3</b> A function in a function</a></li>
+<li class="chapter" data-level="5.4" data-path="functions.html"><a href="functions.html#dot-dot-dot"><i class="fa fa-check"></i><b>5.4</b> Dot dot dot</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>6</b> Lists</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="lists.html"><a href="lists.html#make-a-list"><i class="fa fa-check"></i><b>6.1</b> Make a list</a></li>
+<li class="chapter" data-level="6.2" data-path="lists.html"><a href="lists.html#accessing-elements-in-a-list"><i class="fa fa-check"></i><b>6.2</b> Accessing elements in a list</a></li>
+<li class="chapter" data-level="6.3" data-path="lists.html"><a href="lists.html#brackets-for-real"><i class="fa fa-check"></i><b>6.3</b> Brackets for real</a></li>
+<li class="chapter" data-level="6.4" data-path="lists.html"><a href="lists.html#names-and-values"><i class="fa fa-check"></i><b>6.4</b> Names and values</a></li>
+</ul></li>
+<li class="divider"></li>
+<li>Steve Haroz. <a href="https://creativecommons.org/licenses/by/4.0/" target="blank">CC-BY</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Succinct Intro to R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="control-flow" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Control Flow</h1>
+<p>R is primarily a functional language, so you often don’t need control flow yourself. But if you want to, go for it. If you can write some quick code with a for loop, go for it! Tell the R bullies to fuck off. Do what feels comfortable to you.</p>
+<div id="if" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> If</h2>
+<p>Simple if</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="control-flow.html#cb193-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="cn">TRUE</span></span>
+<span id="cb193-2"><a href="control-flow.html#cb193-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a)  </span>
+<span id="cb193-3"><a href="control-flow.html#cb193-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;a is TRUE&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;a is TRUE&quot;</code></pre>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="control-flow.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># conditionally run multiple expressions</span></span>
+<span id="cb195-2"><a href="control-flow.html#cb195-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a) {</span>
+<span id="cb195-3"><a href="control-flow.html#cb195-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;a is TRUE&quot;</span>)</span>
+<span id="cb195-4"><a href="control-flow.html#cb195-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;a is TRUE&quot;</span>)</span>
+<span id="cb195-5"><a href="control-flow.html#cb195-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;a is TRUE&quot;
+## [1] &quot;a is TRUE&quot;</code></pre>
+<p>If Else</p>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="control-flow.html#cb197-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb197-2"><a href="control-flow.html#cb197-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">8</span></span>
+<span id="cb197-3"><a href="control-flow.html#cb197-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> y) {</span>
+<span id="cb197-4"><a href="control-flow.html#cb197-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is greater than y&quot;</span>)</span>
+<span id="cb197-5"><a href="control-flow.html#cb197-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb197-6"><a href="control-flow.html#cb197-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is less than or equal to y&quot;</span>)</span>
+<span id="cb197-7"><a href="control-flow.html#cb197-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;x is less than or equal to y&quot;</code></pre>
+<p>The <code>ifelse</code> function is the way to handle vector operations. It is like a vectorized version of <code>? :</code> in C or javascript.</p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="control-flow.html#cb199-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb199-2"><a href="control-flow.html#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>, <span class="st">&quot;even&quot;</span>, <span class="st">&quot;odd&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;odd&quot;  &quot;even&quot; &quot;odd&quot;  &quot;even&quot; &quot;odd&quot;  &quot;even&quot; &quot;odd&quot;  &quot;even&quot; &quot;odd&quot;  &quot;even&quot;</code></pre>
+</div>
+<div id="while" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> While</h2>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="control-flow.html#cb201-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb201-2"><a href="control-flow.html#cb201-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (x <span class="sc">&lt;</span> <span class="fl">0.95</span>) {</span>
+<span id="cb201-3"><a href="control-flow.html#cb201-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb201-4"><a href="control-flow.html#cb201-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="for" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> For</h2>
+<p>For works like foreach in other languages.</p>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="control-flow.html#cb202-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
+<span id="cb202-2"><a href="control-flow.html#cb202-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> a) {</span>
+<span id="cb202-3"><a href="control-flow.html#cb202-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">95</span>)</span>
+<span id="cb202-4"><a href="control-flow.html#cb202-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(x)</span>
+<span id="cb202-5"><a href="control-flow.html#cb202-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] 97.55325
+## [1] 95.38971
+## [1] 97.83246
+## [1] 98.82328
+## [1] 99.4855
+## [1] 95.11982</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="types.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

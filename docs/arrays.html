@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Arrays | A Succinct Intro to R</title>
+  <meta name="description" content="<p>This book is intended as a short introduction to the R language.
+It covers the basics of R and is intended as a prequal to analysis and visualization guides like “R for Data Science”.
+This guide assumes you are familiar with programming concepts but want to learn the R language specifically.</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Arrays | A Succinct Intro to R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>This book is intended as a short introduction to the R language.
+It covers the basics of R and is intended as a prequal to analysis and visualization guides like “R for Data Science”.
+This guide assumes you are familiar with programming concepts but want to learn the R language specifically.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Arrays | A Succinct Intro to R" />
+  
+  <meta name="twitter:description" content="<p>This book is intended as a short introduction to the R language.
+It covers the basics of R and is intended as a prequal to analysis and visualization guides like “R for Data Science”.
+This guide assumes you are familiar with programming concepts but want to learn the R language specifically.</p>" />
+  
+
+<meta name="author" content="Steve Haroz" />
+
+
+<meta name="date" content="2021-01-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="variables-math-comparisons-and-strings.html"/>
+<link rel="next" href="types.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Succinct Intro to R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html"><i class="fa fa-check"></i><b>1</b> Variables, Math, Comparisons, and Strings</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#help"><i class="fa fa-check"></i><b>1.1</b> Help</a></li>
+<li class="chapter" data-level="1.2" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#assignment"><i class="fa fa-check"></i><b>1.2</b> Assignment</a></li>
+<li class="chapter" data-level="1.3" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#console-output"><i class="fa fa-check"></i><b>1.3</b> Console Output</a></li>
+<li class="chapter" data-level="1.4" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#math"><i class="fa fa-check"></i><b>1.4</b> Math</a></li>
+<li class="chapter" data-level="1.5" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#comparisons"><i class="fa fa-check"></i><b>1.5</b> Comparisons</a></li>
+<li class="chapter" data-level="1.6" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#boolean"><i class="fa fa-check"></i><b>1.6</b> Boolean</a></li>
+<li class="chapter" data-level="1.7" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#strings"><i class="fa fa-check"></i><b>1.7</b> Strings</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#string-concatenation"><i class="fa fa-check"></i><b>1.7.1</b> String Concatenation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="arrays.html"><a href="arrays.html"><i class="fa fa-check"></i><b>2</b> Arrays</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="arrays.html"><a href="arrays.html#everything-is-an-array"><i class="fa fa-check"></i><b>2.1</b> Everything is an array</a></li>
+<li class="chapter" data-level="2.2" data-path="arrays.html"><a href="arrays.html#creation"><i class="fa fa-check"></i><b>2.2</b> Creation</a></li>
+<li class="chapter" data-level="2.3" data-path="arrays.html"><a href="arrays.html#array-generators"><i class="fa fa-check"></i><b>2.3</b> Array generators</a></li>
+<li class="chapter" data-level="2.4" data-path="arrays.html"><a href="arrays.html#concatenation"><i class="fa fa-check"></i><b>2.4</b> Concatenation</a></li>
+<li class="chapter" data-level="2.5" data-path="arrays.html"><a href="arrays.html#indexing"><i class="fa fa-check"></i><b>2.5</b> Indexing</a></li>
+<li class="chapter" data-level="2.6" data-path="arrays.html"><a href="arrays.html#sampling-from-an-array"><i class="fa fa-check"></i><b>2.6</b> Sampling from an Array</a></li>
+<li class="chapter" data-level="2.7" data-path="arrays.html"><a href="arrays.html#array-constants"><i class="fa fa-check"></i><b>2.7</b> Array constants</a></li>
+<li class="chapter" data-level="2.8" data-path="arrays.html"><a href="arrays.html#array-operations"><i class="fa fa-check"></i><b>2.8</b> Array operations</a></li>
+<li class="chapter" data-level="2.9" data-path="arrays.html"><a href="arrays.html#array-functions"><i class="fa fa-check"></i><b>2.9</b> Array functions</a></li>
+<li class="chapter" data-level="2.10" data-path="arrays.html"><a href="arrays.html#array-sorting"><i class="fa fa-check"></i><b>2.10</b> Array sorting</a></li>
+<li class="chapter" data-level="2.11" data-path="arrays.html"><a href="arrays.html#test-membership"><i class="fa fa-check"></i><b>2.11</b> Test membership</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="types.html"><a href="types.html"><i class="fa fa-check"></i><b>3</b> Types</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="types.html"><a href="types.html#numbers"><i class="fa fa-check"></i><b>3.1</b> Numbers</a></li>
+<li class="chapter" data-level="3.2" data-path="types.html"><a href="types.html#strings-1"><i class="fa fa-check"></i><b>3.2</b> Strings</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="types.html"><a href="types.html#concatenation-1"><i class="fa fa-check"></i><b>3.2.1</b> Concatenation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="types.html"><a href="types.html#dates"><i class="fa fa-check"></i><b>3.3</b> Dates</a></li>
+<li class="chapter" data-level="3.4" data-path="types.html"><a href="types.html#finding-the-type-of-a-variable"><i class="fa fa-check"></i><b>3.4</b> Finding the type of a variable</a></li>
+<li class="chapter" data-level="3.5" data-path="types.html"><a href="types.html#checking-the-type"><i class="fa fa-check"></i><b>3.5</b> Checking the type</a></li>
+<li class="chapter" data-level="3.6" data-path="types.html"><a href="types.html#converting-and-parsing"><i class="fa fa-check"></i><b>3.6</b> Converting and parsing</a></li>
+<li class="chapter" data-level="3.7" data-path="types.html"><a href="types.html#special-types"><i class="fa fa-check"></i><b>3.7</b> Special types</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="types.html"><a href="types.html#na"><i class="fa fa-check"></i><b>3.7.1</b> NA</a></li>
+<li class="chapter" data-level="3.7.2" data-path="types.html"><a href="types.html#factor"><i class="fa fa-check"></i><b>3.7.2</b> Factor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="control-flow.html"><a href="control-flow.html"><i class="fa fa-check"></i><b>4</b> Control Flow</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="control-flow.html"><a href="control-flow.html#if"><i class="fa fa-check"></i><b>4.1</b> If</a></li>
+<li class="chapter" data-level="4.2" data-path="control-flow.html"><a href="control-flow.html#while"><i class="fa fa-check"></i><b>4.2</b> While</a></li>
+<li class="chapter" data-level="4.3" data-path="control-flow.html"><a href="control-flow.html#for"><i class="fa fa-check"></i><b>4.3</b> For</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>5</b> Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="functions.html"><a href="functions.html#parameters"><i class="fa fa-check"></i><b>5.1</b> Parameters</a></li>
+<li class="chapter" data-level="5.2" data-path="functions.html"><a href="functions.html#scope"><i class="fa fa-check"></i><b>5.2</b> Scope</a></li>
+<li class="chapter" data-level="5.3" data-path="functions.html"><a href="functions.html#a-function-in-a-function"><i class="fa fa-check"></i><b>5.3</b> A function in a function</a></li>
+<li class="chapter" data-level="5.4" data-path="functions.html"><a href="functions.html#dot-dot-dot"><i class="fa fa-check"></i><b>5.4</b> Dot dot dot</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>6</b> Lists</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="lists.html"><a href="lists.html#make-a-list"><i class="fa fa-check"></i><b>6.1</b> Make a list</a></li>
+<li class="chapter" data-level="6.2" data-path="lists.html"><a href="lists.html#accessing-elements-in-a-list"><i class="fa fa-check"></i><b>6.2</b> Accessing elements in a list</a></li>
+<li class="chapter" data-level="6.3" data-path="lists.html"><a href="lists.html#brackets-for-real"><i class="fa fa-check"></i><b>6.3</b> Brackets for real</a></li>
+<li class="chapter" data-level="6.4" data-path="lists.html"><a href="lists.html#names-and-values"><i class="fa fa-check"></i><b>6.4</b> Names and values</a></li>
+</ul></li>
+<li class="divider"></li>
+<li>Steve Haroz. <a href="https://creativecommons.org/licenses/by/4.0/" target="blank">CC-BY</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Succinct Intro to R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="arrays" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Arrays</h1>
+<p>In R, arrays are commonly called “vectors”. R likes to be special.</p>
+<div id="everything-is-an-array" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Everything is an array</h2>
+<p>In R, even single values are arrays. That’s why you see <code>[1]</code> in front of results: even single values are the first item in an array of length one.</p>
+</div>
+<div id="creation" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Creation</h2>
+<p><code>c()</code> is some sort of legacy nonsense from the S language. I think it means <em>character array</em> even though it can hold things other than characters.</p>
+<p>I pronounce it “CAW”. Like the sound a crow makes.</p>
+<p>Simple array</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="arrays.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 8 6 7 5</code></pre>
+<p>For multiple types, R converts elements to the most complex type (usually a strong). For a real multi-typed collection, see <a href="lists.html">lists</a></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="arrays.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">9</span>, <span class="st">&#39;hello&#39;</span>, <span class="dv">7</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;9&quot;     &quot;hello&quot; &quot;7&quot;</code></pre>
+</div>
+<div id="array-generators" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Array generators</h2>
+<p>R has a cultural fear of complete words. Many terms are shortcuts or acronyms.</p>
+<p>Repeat</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="arrays.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 0 0 0 0</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="arrays.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">4</span>) <span class="co"># repeate the whole array</span></span></code></pre></div>
+<pre><code>##  [1] 1 2 3 1 2 3 1 2 3 1 2 3</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="arrays.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">each=</span><span class="dv">4</span>) <span class="co"># repeat each item in the array before moving to the next</span></span></code></pre></div>
+<pre><code>##  [1] 1 1 1 1 2 2 2 2 3 3 3 3</code></pre>
+<p>Sequence</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="arrays.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co">#increment by 1</span></span>
+<span id="cb61-2"><a href="arrays.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
+<pre><code>## [1]  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="arrays.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co">#increment by any other value</span></span>
+<span id="cb63-2"><a href="arrays.html#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">10</span>, <span class="at">to=</span><span class="dv">50</span>, <span class="at">by=</span><span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 10 15 20 25 30 35 40 45 50</code></pre>
+<p>Randomly sample from a given distribution</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="arrays.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># uniform distribution (not &#39;run if&#39;)</span></span>
+<span id="cb65-2"><a href="arrays.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="at">n=</span><span class="dv">5</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 0.5081173 0.3218464 0.7518126 0.5189526 0.5536591</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="arrays.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># normal distribution</span></span>
+<span id="cb67-2"><a href="arrays.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">5</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] -1.9426170 -1.4157556  2.3351243  0.5267346  0.4063238</code></pre>
+</div>
+<div id="concatenation" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Concatenation</h2>
+<p>An array made up of smaller arrays combines them. R doesn’t seem to allow for an array of arrays.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="arrays.html#cb69-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb69-2"><a href="arrays.html#cb69-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">11</span>)</span>
+<span id="cb69-3"><a href="arrays.html#cb69-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> <span class="dv">500</span></span>
+<span id="cb69-4"><a href="arrays.html#cb69-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-5"><a href="arrays.html#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(x, y, z)</span></code></pre></div>
+<pre><code>## [1]   1   2   3  10  11 500</code></pre>
+<p><em>Note: <code>z</code> is technically an array of length 1</em></p>
+<p>Collapse an array into a string</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="arrays.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">collapse=</span><span class="st">&quot;, &quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;1, 2, 3, 4, 5&quot;</code></pre>
+</div>
+<div id="indexing" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Indexing</h2>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="arrays.html#cb73-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">20</span></span></code></pre></div>
+<p>Get the first value - <strong>Indices start at 1, not 0</strong></p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="arrays.html#cb74-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<p>2nd and 6th values</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="arrays.html#cb76-1" aria-hidden="true" tabindex="-1"></a>a[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>)]</span></code></pre></div>
+<pre><code>## [1] 11 15</code></pre>
+<p>Exclude the 2nd and 6th values</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="arrays.html#cb78-1" aria-hidden="true" tabindex="-1"></a>a[<span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">6</span>)]</span></code></pre></div>
+<pre><code>## [1] 10 12 13 14 16 17 18 19 20</code></pre>
+<p>Range of values</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="arrays.html#cb80-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>]</span></code></pre></div>
+<pre><code>## [1] 11 12 13 14 15</code></pre>
+<p>Any order or number of repetitions</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="arrays.html#cb82-1" aria-hidden="true" tabindex="-1"></a>a[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">6</span>)]</span></code></pre></div>
+<pre><code>## [1] 11 13 15 15 15</code></pre>
+<p>specify values using booleans (keep this in mind for the “Array operators” section)</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="arrays.html#cb84-1" aria-hidden="true" tabindex="-1"></a>a[<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)]</span></code></pre></div>
+<pre><code>## [1] 10 12 14 16 18 20</code></pre>
+</div>
+<div id="sampling-from-an-array" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Sampling from an Array</h2>
+<p>Randomly sample from an array. Elements may repeat.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="arrays.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>##  [1] 3 3 3 3 2 3 2 1 2 3</code></pre>
+<p><em><code>replace</code> means “sample with replacement”, so an element can be sampled more than once</em></p>
+<p>Sample without replacement. Elements will not repeat.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="arrays.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">replace=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 3 5 4 1</code></pre>
+<p>Shuffle the order of an array</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="arrays.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(a, <span class="at">size=</span><span class="fu">length</span>(a), <span class="at">replace=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>##  [1] 19 12 20 15 11 14 17 13 18 16 10</code></pre>
+<p>Make sure you have enough elements</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="arrays.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">replace=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## Error in sample.int(length(x), size, replace, prob): cannot take a sample larger than the population when &#39;replace = FALSE&#39;</code></pre>
+</div>
+<div id="array-constants" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Array constants</h2>
+<p>The <code>letters</code> and <code>LETTERS</code> constants hold lower and upper case letters</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="arrays.html#cb94-1" aria-hidden="true" tabindex="-1"></a>letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="arrays.html#cb96-1" aria-hidden="true" tabindex="-1"></a>LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot;</code></pre>
+</div>
+<div id="array-operations" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Array operations</h2>
+<p>Compare individual elements</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="arrays.html#cb98-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&gt;</span> <span class="dv">15</span></span></code></pre></div>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<p>Compare each element across arrays</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="arrays.html#cb100-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">19</span>, <span class="dv">20</span>)</span></code></pre></div>
+<pre><code>##  [1]  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<p>Select elements using boolean array</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="arrays.html#cb102-1" aria-hidden="true" tabindex="-1"></a>a[a<span class="sc">&gt;</span><span class="dv">15</span>]</span></code></pre></div>
+<pre><code>## [1] 16 17 18 19 20</code></pre>
+<p>You can perform operations on the elements of two arrays <strong>even if they are different sizes</strong>. The smaller one wraps around.</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="arrays.html#cb104-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb104-2"><a href="arrays.html#cb104-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">8</span>)</span>
+<span id="cb104-3"><a href="arrays.html#cb104-3" aria-hidden="true" tabindex="-1"></a>a <span class="sc">+</span> b</span></code></pre></div>
+<pre><code>## Warning in a + b: longer object length is not a multiple of shorter object
+## length</code></pre>
+<pre><code>## [1] 2 3 4 5 6 2 3 4</code></pre>
+<p>Because all variables are arrays, scalars work the same way:</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="arrays.html#cb107-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
+<pre><code>## [1] 2 3 4 5 6</code></pre>
+</div>
+<div id="array-functions" class="section level2" number="2.9">
+<h2><span class="header-section-number">2.9</span> Array functions</h2>
+<p>Length</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="arrays.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="dv">20</span><span class="sc">:</span><span class="dv">50</span>)</span></code></pre></div>
+<pre><code>## [1] 31</code></pre>
+<p>Reverse</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="arrays.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rev</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 5 4 3 2 1</code></pre>
+<p>Math</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="arrays.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="arrays.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="arrays.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 15</code></pre>
+</div>
+<div id="array-sorting" class="section level2" number="2.10">
+<h2><span class="header-section-number">2.10</span> Array sorting</h2>
+<p>Sort</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="arrays.html#cb119-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">70</span>, <span class="dv">20</span>, <span class="dv">80</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">40</span>)</span>
+<span id="cb119-2"><a href="arrays.html#cb119-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(a)</span></code></pre></div>
+<pre><code>## [1] 10 20 20 40 70 80</code></pre>
+<p>Reverse</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="arrays.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(a, <span class="at">decreasing=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 80 70 40 20 20 10</code></pre>
+<p>Get the indices of the sorted values</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="arrays.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">order</span>(a)</span></code></pre></div>
+<pre><code>## [1] 5 2 4 6 1 3</code></pre>
+</div>
+<div id="test-membership" class="section level2" number="2.11">
+<h2><span class="header-section-number">2.11</span> Test membership</h2>
+<p>To see if an item is in an array, use <code>%in%</code></p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="arrays.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="arrays.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span><span class="sc">:</span><span class="dv">11</span> <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE FALSE</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="variables-math-comparisons-and-strings.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="types.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

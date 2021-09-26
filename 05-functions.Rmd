@@ -1,0 +1,96 @@
+
+# Functions
+
+Basic function
+```{r}
+foo = function () {
+  print("hello world")
+}
+foo()
+```
+*Note: in the function, you need to use `print` to output*
+
+## Parameters
+
+Parameters and return values
+```{r}
+addOne = function (x) {
+  return(x + 1)
+}
+addOne(5)
+```
+*The syntax for return is like a function: `return(value)`*
+
+Parameter order can be arbitrary
+```{r}
+add = function (x, y) {
+  return(x + (y*10))
+}
+add(x=2, y=10)
+add(y=10, x=2)
+```
+
+Functions are vectorized by default
+```{r}
+addOne(1:5)
+```
+
+All parameters are pass-by-value because functions are immutable.
+
+```{r}
+a = 5
+foo = function (a) {
+  a = 6
+  print(paste("Inside the function as a parameter: ", a))
+}
+print(paste("Before the function: ", a))
+foo(1)
+print(paste("After the function: ", a))
+
+```
+
+
+## Scope
+
+When you assign a value inside a function, it creates a local variable in the scope of the function. You can't access the global variable inside the function. (OK, you can, but the syntax is so obnoxious that I pretend it doesn't exist)
+
+```{r}
+a = 5
+foo = function () {
+  a = 6
+  b = 100
+  print(paste("Inside the function: ", a, b))
+}
+print(paste("Before the function: ", a))
+foo()
+print(paste("After the function: ", a, b))
+```
+
+
+## A function in a function
+
+Might be useful for encapsulation
+```{r}
+foo = function (a, b) {
+  square = function(x) {
+    return(x ^ x)
+  }
+  print(c(a, b))
+  print(c(square(a), square(b)))
+}
+foo(1, 10)
+```
+
+
+## Dot dot dot
+```{r}
+foo = function (a, b) {
+  return (a / b)
+}
+bar = function(a, ...) {
+  return(foo(a, ...))
+}
+bar(50, 10)
+bar(b = 10, 50) # named works too
+```
+

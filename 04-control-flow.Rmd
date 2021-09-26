@@ -1,0 +1,57 @@
+
+# Control Flow
+
+R is primarily a functional language, so you often don't need control flow yourself. But if you want to, go for it. If you can write some quick code with a for loop, go for it! Tell the R bullies to fuck off. Do what feels comfortable to you.
+
+## If
+
+Simple if
+```{r}
+a = TRUE
+if (a)  
+  print("a is TRUE")
+
+# conditionally run multiple expressions
+if (a) {
+  print("a is TRUE")
+  print("a is TRUE")
+}
+```
+
+If Else
+```{r}
+x = 5
+y = 8
+if (x > y) {
+  print("x is greater than y")
+} else {
+  print("x is less than or equal to y")
+}
+```
+
+The `ifelse` function is the way to handle vector operations. It is like a vectorized version of ` ? : ` in C or javascript.
+```{r}
+x = 1:10
+ifelse(x %% 2 == 0, "even", "odd")
+```
+
+## While
+
+```{r}
+x = runif(1)
+while (x < 0.95) {
+  x = runif(1)
+}
+```
+
+
+## For
+
+For works like foreach in other languages.
+```{r}
+a = runif(100, 1, 100)
+for (x in a) {
+  if (x > 95)
+    print(x)
+}
+```

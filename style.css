@@ -1,0 +1,27 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+/* Steve */
+p + div.sourceCode {
+  margin-top: -0.5em;
+}
+
+div.sourceCode + pre, div.sourceCode + pre + pre {
+    margin-top: -0.95em !important
+}
+
+div.sourceCode + pre + p, div.sourceCode + pre + pre + p {
+  margin-top: 1.5em !important;
+}

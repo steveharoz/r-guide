@@ -1,0 +1,179 @@
+# Types
+
+## Numbers
+
+R has integers but defaults all numbers to `numeric` which is a double precision float
+
+```{r}
+x = 5 # no decimal but still a double
+y = x + 1
+```
+
+Good ol' float point comparison
+
+```{r}
+x = .58
+y = .08
+x - y == 0.5
+round(x-y, digits=1) == round(0.5, digits=1)
+```
+
+Numeric division returns double
+
+```{r}
+9 / 2 # double
+9 %/% 2 # drop the part after the decimal
+```
+
+## Strings
+
+Single and double quotes are the same in R, but a given string needs the same in the beginning and end
+
+```{r tidy=FALSE}
+"hello world"
+'hello world'
+"single quote ' in a string"
+'double quote " in a string'
+```
+
+### Concatenation
+
+Concatenate with a space in between
+
+```{r}
+paste('hello', 'world')
+```
+
+Use a difference separator
+
+```{r}
+paste('hello', 'world', sep='_')
+```
+
+No separator
+
+```{r}
+paste0('hello', 'world')
+```
+
+## Dates
+
+See the [lubridate library](https://lubridate.tidyverse.org/).
+
+## Finding the type of a variable
+
+```{r}
+class(c(5, 'hi', TRUE))
+```
+
+## Checking the type
+
+What's the type?
+
+```{r}
+class(5)
+```
+
+Remember, arrays are the same as single values.
+
+```{r}
+class(1:5)
+```
+
+Test if numeric
+
+```{r}
+is.numeric(5)
+```
+
+Test if string
+
+```{r}
+is.character('hi')
+```
+
+Test if boolean
+
+```{r}
+is.logical(TRUE)
+```
+
+## Converting and parsing
+
+Parse or convert to numeric
+
+```{r}
+as.numeric(c("5", TRUE, 1:3, "abc"))
+```
+
+To string
+
+```{r}
+as.character(5)
+format(1/3)
+format(1/3 , digits = 16)
+as.character(TRUE)
+```
+
+Convert to boolean. Zero is false. Other numbers are true.
+
+```{r}
+as.logical(0:2)
+```
+
+## Special types
+
+### NA
+
+Missing values are very common in datasets.
+
+```{r}
+is.na(c(NA, 1, ""))
+```
+
+Any operation performed on NA will also yield NA. So, you can operate on arrays with missing values.
+
+```{r}
+c(5, NA, 7) + 1
+```
+
+Be careful about aggregation functions like `min()`, `max()`, and `mean()`. To ignore NAs, use the `na.rm` parameter.
+
+```{r}
+mean(c(5, NA, 7), na.rm=TRUE)
+```
+
+### Factor
+
+A factor is like an enum in other languages. It encodes strings as integers via a dictionary.
+
+Create an array with many repeating values
+
+```{r}
+data = sample(c("hello", "cruel", "world"), 12, replace=TRUE)
+data
+```
+
+Make it into a `factor`
+
+```{r}
+data = factor(data)
+data
+```
+
+*Note: The values are in the order they appear in the array*
+
+The array is now an integer array with a dictionary
+
+```{r}
+as.numeric(data)
+data[5]
+```
+
+See the different values in the array
+
+```{r}
+levels(data)
+```
+
+For more info, see [forcats](https://forcats.tidyverse.org/).

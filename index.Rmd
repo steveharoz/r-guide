@@ -1,0 +1,36 @@
+---
+title: "A Succinct Intro to R"
+author: "Steve Haroz"
+date: "`r 2021 #Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+# bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This book is intended as a short introduction to the R language. 
+  It covers the basics of R and is intended as a prequal to analysis and visualization guides like "R for Data Science". 
+  This guide assumes you are familiar with programming concepts but want to learn the R language specifically.
+# link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# About {.unnumbered}
+
+This book is intended as a short introduction to the R language. It covers only the basics of R that are not covered by analysis and visualization guides like [R for Data Science](https://r4ds.had.co.na). Consider it a quick way to get up to speed on R before diving into the analysis and visualization aspects.
+
+This guide assumes you are familiar with programming concepts but want to learn the R language specifically. It offers more examples than an "R cheat sheet" without the verbosity of a language spec or the inanity of an introduction to programming.
+
+## Sources of inspiration {.unlisted .unnumbered}
+
+<http://alyssafrazee.com/introducing-R.html>
+
+[R for programmers](http://www.johndcook.com/R_language_for_programmers.html)
+
+# Prerequisites {.unnumbered}
+
+The prerequisites in [R for Data Science](https://r4ds.had.co.nz/introduction.html#prerequisites) are the same for this guide:
+
+1.  Install R for [Windows](https://cloud.r-project.org/bin/windows/base/), [Mac](https://cloud.r-project.org/bin/macosx/), or your [variant of Linux](https://cloud.r-project.org/bin/linux/).
+2.  Install [RStudio](https://www.rstudio.com/products/rstudio/).
+3.  (optional) Run RStudio, and install the tidyverse by typing the following into the RStudio console: `install.packages("tidyverse")`

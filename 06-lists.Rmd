@@ -1,0 +1,69 @@
+
+# Lists
+
+A list is like an array but it can multiple types of elements.
+
+## Make a list
+```{r tidy=FALSE}
+x = list(
+  a = 5,
+  b = 2,
+  Long_Name = 4.8,
+  "named with spaces" = 0,
+  12, # not every element needs a name
+  a = 20 # names don't have to be unique (but you really should avoid this)
+)
+```
+
+
+## Accessing elements in a list
+
+Get a tuple of the key and value
+```{r}
+x['a'] # by key name
+x[1]   # by index
+```
+
+Multiple keys
+```{r}
+x[c('b', 'a')] # by key name
+x[c('b', 'a')] # by key name
+```
+
+Type the list name, then `$`, and press tab. R will pop up a list of keys to autocomplete. R uses `$` in the way that other languages use `.`
+```{r}
+x$Long_Name
+```
+*Note: Only the value is returned.*
+
+## Brackets for real
+
+Sometimes, you need to use double brackets. Why? Best I can figure out, R is a snarky shit and doesn't believe you actually want what you said you want. So you need to use double brackets to explain to R that you're sure this is what you want.
+
+Double brackets only works for single items, not subsetting.
+```{r}
+x[['a']] # by key name
+x[[1]]   # by index
+```
+
+
+
+## Names and values
+
+Use the `names()` function to get and set names. It behaves like an array.
+```{r}
+names(x)
+names(x)[3]
+```
+
+You can modify names by assigning strings to the resurned array. This is weird. Take a minute to let it sink in.
+```{r}
+names(x) = c("first", "second", "third", "fourth")
+names(x)[3] = "new name"
+```
+
+If all elements are the same type, this will get a vector of values
+```{r}
+myList = list(a=1, b=2, c=3, d=4)
+as.vector(unlist(myList))
+```

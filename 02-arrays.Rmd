@@ -1,0 +1,240 @@
+# Arrays
+
+In R, arrays are commonly called "vectors". R likes to be special.
+
+## Everything is an array
+
+In R, even single values are arrays. That's why you see `[1]` in front of results: even single values are the first item in an array of length one.
+
+## Creation
+
+`c()` is some sort of legacy nonsense from the S language. I think it means *character array* even though it can hold things other than characters.
+
+I pronounce it "CAW". Like the sound a crow makes.
+
+Simple array
+
+```{r}
+c(8, 6, 7, 5)
+```
+
+For multiple types, R converts elements to the most complex type (usually a strong). For a real multi-typed collection, see [lists](lists.html)
+
+```{r}
+c(9, 'hello', 7)
+```
+
+## Array generators
+
+R has a cultural fear of complete words. Many terms are shortcuts or acronyms.
+
+Repeat
+
+```{r}
+rep(0, 4)
+rep(c(1,2,3), 4) # repeate the whole array
+rep(c(1,2,3), each=4) # repeat each item in the array before moving to the next
+```
+
+Sequence
+
+```{r}
+#increment by 1
+4:10
+#increment by any other value
+seq(from=10, to=50, by=5)
+```
+
+Randomly sample from a given distribution
+
+```{r}
+# uniform distribution (not 'run if')
+runif(n=5, min=0, max=1)
+# normal distribution
+rnorm(n=5, mean=0, sd=1)
+```
+
+## Concatenation
+
+An array made up of smaller arrays combines them. R doesn't seem to allow for an array of arrays.
+
+```{r}
+x = 1:3
+y = c(10, 11)
+z = 500
+
+c(x, y, z)
+```
+
+*Note: `z` is technically an array of length 1*
+
+Collapse an array into a string
+
+```{r}
+paste(1:5, collapse=", ")
+```
+
+## Indexing
+
+```{r}
+a = 10:20
+```
+
+Get the first value - **Indices start at 1, not 0**
+
+```{r}
+a[1]
+```
+
+2nd and 6th values
+
+```{r}
+a[c(2,6)]
+```
+
+Exclude the 2nd and 6th values
+
+```{r}
+a[c(-2,-6)]
+```
+
+Range of values
+
+```{r}
+a[2:6]
+```
+
+Any order or number of repetitions
+
+```{r}
+a[c(2, 4, 6, 6, 6)]
+```
+
+specify values using booleans (keep this in mind for the "Array operators" section)
+
+```{r}
+a[c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE)]
+```
+
+## Sampling from an Array
+
+Randomly sample from an array. Elements may repeat.
+
+```{r}
+sample(1:3, size=10, replace=TRUE)
+```
+
+*`replace` means "sample with replacement", so an element can be sampled more than once*
+
+Sample without replacement. Elements will not repeat.
+
+```{r}
+sample(1:5, size=4, replace=FALSE)
+```
+
+Shuffle the order of an array
+
+```{r}
+sample(a, size=length(a), replace=FALSE)
+```
+
+Make sure you have enough elements
+
+```{r, error=TRUE}
+sample(1:5, size=10, replace=FALSE)
+```
+
+## Array constants
+
+The `letters` and `LETTERS` constants hold lower and upper case letters
+
+```{r}
+letters[1:5]
+LETTERS[1:5]
+```
+
+## Array operations
+
+Compare individual elements
+
+```{r}
+a > 15
+```
+
+Compare each element across arrays
+
+```{r}
+a == c(10, 9, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+```
+
+Select elements using boolean array
+
+```{r}
+a[a>15]
+```
+
+You can perform operations on the elements of two arrays **even if they are different sizes**. The smaller one wraps around.
+
+```{r}
+a = 1:5
+b = rep(1, 8)
+a + b
+```
+
+Because all variables are arrays, scalars work the same way:
+
+```{r}
+a + 1
+```
+
+## Array functions
+
+Length
+
+```{r}
+length(20:50)
+```
+
+Reverse
+
+```{r}
+rev(1:5)
+```
+
+Math
+
+```{r}
+min(1:5)
+max(1:5)
+sum(1:5)
+```
+
+## Array sorting
+
+Sort
+
+```{r}
+a = c(70, 20, 80, 20, 10, 40)
+sort(a)
+```
+
+Reverse
+
+```{r}
+sort(a, decreasing=TRUE)
+```
+
+Get the indices of the sorted values
+
+```{r}
+order(a)
+```
+
+## Test membership
+
+To see if an item is in an array, use `%in%`
+
+```{r}
+9 %in% 1:10
+9:11 %in% 1:10
+```

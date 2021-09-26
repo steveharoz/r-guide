@@ -1,0 +1,129 @@
+
+# Variables, Math, Comparisons, and Strings
+
+## Help 
+
+```{r tidy=FALSE, eval=FALSE}
+# Hi. I'm a comment.
+
+# If you know a function's name, but not how to use it:
+?chisq.test
+
+# You can also type part of the name and press tab to autocomplete and see a bit info
+
+# if you know what you want to do, but don't know the function name:
+??chisquare
+```
+
+
+
+## Assignment
+
+```{r tidy=FALSE}
+a = 6
+b = 8
+c = 5.44
+d = TRUE
+e = "hello world" 
+e = 'hello world' # same as double quote
+```
+*Note: No semi colon or "var" needed*
+
+You'll sometimes see `a <- 6` instead of `a = 6`. Just use `=`. Some people insist on using `<-`. They are silly.
+
+## Console Output
+
+Print `a` in the console
+```{r}
+a
+```
+*The `[1]` is output because all values are arrays.*
+
+Another option useful inside functions
+```{r}
+print(a)
+```
+
+## Math
+
+Arithmetic
+```{r tidy=FALSE}
+z = a + b
+z = a - b
+z = a * b
+z = a / b
+z = a %/% b # Integer division
+z = a %% b # Note the double % for the modulo operator
+z = a ^ b # exponent
+
+1 + 2 - 3 * 4 / 5 ^ 6 # Please excuse my dear aunt, Sally
+```
+*Note: There is no ++ or +=*
+
+Functions for floats
+```{r tidy=FALSE}
+floor(4.82)
+ceiling(4.82)
+round(4.82)
+```
+
+Other basic math functions
+```{r tidy=FALSE}
+sin(pi/2) + cos(0)
+log(exp(2)) # ln is the default base
+log(100, 10) # use base 10
+```
+
+## Comparisons
+
+```{r}
+a == b
+a != b
+a > b
+a < b
+a >= b
+a <= b
+```
+
+## Boolean
+
+```{r}
+TRUE & FALSE
+TRUE | FALSE
+!TRUE
+```
+There's `&` and `&&`. You usually want just `&`.
+
+## Strings
+
+Strings are not arrays in R, so array techniques may not work on strings.
+
+String length
+```{r}
+nchar('hello world')
+```
+
+Substring
+```{r}
+substring('hello world', 2, 10)
+```
+
+Comparison
+```{r tidy=FALSE}
+'hello' == "hello"
+```
+
+### String Concatenation
+
+Concatenate with a space in between
+```{r}
+paste('hello', 'world')
+```
+Use a difference separator
+```{r}
+paste('hello', 'world', sep='_')
+```
+No separator
+```{r}
+paste('hello', 'world', sep='')
+```
