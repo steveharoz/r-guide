@@ -44,6 +44,15 @@ Another option useful inside functions
 print(a)
 ```
 
+
+## Names with weird characters
+
+You can use any weird character like a space in a variable name by surrounding the name with \`. Avoid it if you can, but sometimes it's necessary when you load data from a file.
+```{r}
+`more than four (>4)` = 5
+`more than four (>4)`
+```
+
 ## Math
 
 Arithmetic
@@ -112,6 +121,20 @@ Comparison
 ```{r tidy=FALSE}
 'hello' == "hello"
 ```
+
+### Strings with special characters
+
+If you want to use special characters in a string, you need to "escape it" by adding \
+```{r}
+"string with backslashes \\ and unicode \u263A"
+```
+
+Or you can use the literal `r"(text)"` which is useful for a Windows path or regular expression
+```{r}
+r"(c:\hello\world)"
+```
+
+
 
 ### String Concatenation
 

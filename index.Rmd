@@ -12,14 +12,14 @@ description: |
   It covers the basics of R and is intended as a prequal to analysis and visualization guides like "R for Data Science". 
   This guide assumes you are familiar with programming concepts but want to learn the R language specifically.
 # link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: steveharoz/r-guide
 ---
 
 # About {.unnumbered}
 
-This book is intended as a short introduction to the R language. It covers only the basics of R that are not covered by analysis and visualization guides like [R for Data Science](https://r4ds.had.co.na). Consider it a quick way to get up to speed on R before diving into the analysis and visualization aspects.
+This book is intended as a short introduction to the R language. It covers the basics of R that are not covered by analysis and visualization guides like [R for Data Science](https://r4ds.had.co.na). Consider it a quick way to get up to speed on R before diving into the analysis and visualization aspects.
 
-This guide assumes you are familiar with programming concepts but want to learn the R language specifically. It offers more examples than an "R cheat sheet" without the verbosity of a language spec or the inanity of an introduction to programming.
+This example-focused guide assumes you are familiar with programming concepts but want to learn the R language. It offers more examples than an "R cheat sheet" without the verbosity of a language spec or an introduction to programming.
 
 ## Sources of inspiration {.unlisted .unnumbered}
 

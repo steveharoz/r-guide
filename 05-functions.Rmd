@@ -96,3 +96,13 @@ bar(50, 10)
 bar(b = 10, 50) # named works too
 ```
 
+## Operators
+
+Operators like `+` or `-` or even `[` are all functions. To use them like a function, surround them with \`.
+
+```{r}
+`+`(3, 4)
+`*`(3, 4)
+`[`(5:10, 2) # you don't need the close bracket (])
+```
+

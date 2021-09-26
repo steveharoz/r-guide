@@ -2,10 +2,12 @@ variables-math-comparisons-and-strings
 help
 assignment
 console-output
+names-with-weird-characters
 math
 comparisons
 boolean
 strings
+strings-with-special-characters
 string-concatenation
 arrays
 everything-is-an-array
@@ -39,8 +41,10 @@ parameters
 scope
 a-function-in-a-function
 dot-dot-dot
+operators
 lists
 make-a-list
 accessing-elements-in-a-list
 brackets-for-real
 names-and-values
+libraries-and-packages

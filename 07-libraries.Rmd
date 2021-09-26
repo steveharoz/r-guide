@@ -1,0 +1,14 @@
+# Libraries and packages
+
+A library or package is a collection of variables, datasets, functions, and/or operators.
+
+A library and a package are the same thing, but R people will insist there is a difference. Whenever talking to R people, you've got a 50-50 chance of getting it right. If you get it wrong, you're going to get a short lecture. Just nod, and say "yes, that makes sense". Otherwise, you'll get a much longer lecture.
+
+The only practical difference is that it's called a "package" when being installed `install.packages("tidyverse")` and a "library" when being loaded for use `library(tidyverse)`.
+
+I use these functions, so I don't have to worry about confusing the two.
+
+```{r}
+install.library = install.packages
+package = library
+```

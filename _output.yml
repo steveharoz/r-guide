@@ -5,7 +5,8 @@ bookdown::gitbook:
       before: |
         <li><a href="./">A Succinct Intro to R</a></li>
       after: |
-        <li><a href="https://creativecommons.org/licenses/by/4.0/" target="blank">Steve Haroz CC-BY</a></li>
+        <li><a href="https://creativecommons.org/licenses/by/4.0/" target="blank">Steve Haroz CC-BY</a></li><? if($_SERVER['HTTP_HOST'] !== 'localhost'){ ?> <!-- StatCounter --> <script type="text/javascript"> sc_project=1771316; sc_invisible=1; sc_partition=16; sc_security="caf1424b"; </script> <script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a href="http://www.statcounter.com/" target="_blank"><img class="statcounter" src="http://c17.statcounter.com/1771316/0/caf1424b/1/" alt="hit counter code" /></a></div></noscript> <!-- End StatCounter --> <? } ?>
+
     sharing: false
     #edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
     #download: ["pdf", "epub"]

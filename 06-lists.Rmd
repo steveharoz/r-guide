@@ -56,7 +56,7 @@ names(x)
 names(x)[3]
 ```
 
-You can modify names by assigning strings to the resurned array. This is weird. Take a minute to let it sink in.
+You can modify names by assigning strings to the names function. This is weird. Take a minute to let it sink in.
 ```{r}
 names(x) = c("first", "second", "third", "fourth")
 names(x)[3] = "new name"
