@@ -210,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="lists.html"><a href="lists.html#names-and-values"><i class="fa fa-check"></i><b>6.4</b> Names and values</a></li>
 </ul></li>
 <li class="divider"></li>
-<li>Steve Haroz. <a href="https://creativecommons.org/licenses/by/4.0/" target="blank">CC-BY</a></li>
+<li><a href="https://creativecommons.org/licenses/by/4.0/" target="blank">Steve Haroz CC-BY</a></li>
 
 </ul>
 
@@ -267,10 +267,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Randomly sample from a given distribution</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="arrays.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># uniform distribution (not &#39;run if&#39;)</span></span>
 <span id="cb65-2"><a href="arrays.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="at">n=</span><span class="dv">5</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## [1] 0.5081173 0.3218464 0.7518126 0.5189526 0.5536591</code></pre>
+<pre><code>## [1] 0.66648088 0.57703949 0.31302278 0.09737377 0.56484550</code></pre>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="arrays.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># normal distribution</span></span>
 <span id="cb67-2"><a href="arrays.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">5</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## [1] -1.9426170 -1.4157556  2.3351243  0.5267346  0.4063238</code></pre>
+<pre><code>## [1] -0.37886087 -1.30361427  0.78930060 -0.02098306 -0.53578862</code></pre>
 </div>
 <div id="concatenation" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Concatenation</h2>
@@ -312,14 +312,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.6</span> Sampling from an Array</h2>
 <p>Randomly sample from an array. Elements may repeat.</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="arrays.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>##  [1] 3 3 3 3 2 3 2 1 2 3</code></pre>
+<pre><code>##  [1] 2 1 3 3 3 3 1 2 1 1</code></pre>
 <p><em><code>replace</code> means “sample with replacement”, so an element can be sampled more than once</em></p>
 <p>Sample without replacement. Elements will not repeat.</p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="arrays.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">replace=</span><span class="cn">FALSE</span>)</span></code></pre></div>
-<pre><code>## [1] 3 5 4 1</code></pre>
+<pre><code>## [1] 1 3 5 2</code></pre>
 <p>Shuffle the order of an array</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="arrays.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(a, <span class="at">size=</span><span class="fu">length</span>(a), <span class="at">replace=</span><span class="cn">FALSE</span>)</span></code></pre></div>
-<pre><code>##  [1] 19 12 20 15 11 14 17 13 18 16 10</code></pre>
+<pre><code>##  [1] 20 15 12 14 10 11 19 17 16 18 13</code></pre>
 <p>Make sure you have enough elements</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="arrays.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">replace=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## Error in sample.int(length(x), size, replace, prob): cannot take a sample larger than the population when &#39;replace = FALSE&#39;</code></pre>

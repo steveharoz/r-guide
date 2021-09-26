@@ -210,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="lists.html"><a href="lists.html#names-and-values"><i class="fa fa-check"></i><b>6.4</b> Names and values</a></li>
 </ul></li>
 <li class="divider"></li>
-<li>Steve Haroz. <a href="https://creativecommons.org/licenses/by/4.0/" target="blank">CC-BY</a></li>
+<li><a href="https://creativecommons.org/licenses/by/4.0/" target="blank">Steve Haroz CC-BY</a></li>
 
 </ul>
 
@@ -234,39 +234,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A list is like an array but it can multiple types of elements.</p>
 <div id="make-a-list" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Make a list</h2>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="lists.html#cb232-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb232-2"><a href="lists.html#cb232-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">a =</span> <span class="dv">5</span>,</span>
-<span id="cb232-3"><a href="lists.html#cb232-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">b =</span> <span class="dv">2</span>,</span>
-<span id="cb232-4"><a href="lists.html#cb232-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Long_Name =</span> <span class="fl">4.8</span>,</span>
-<span id="cb232-5"><a href="lists.html#cb232-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;named with spaces&quot;</span> <span class="ot">=</span> <span class="dv">0</span>,</span>
-<span id="cb232-6"><a href="lists.html#cb232-6" aria-hidden="true" tabindex="-1"></a>  <span class="dv">12</span>, <span class="co"># not every element needs a name</span></span>
-<span id="cb232-7"><a href="lists.html#cb232-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">a =</span> <span class="dv">20</span> <span class="co"># names don&#39;t have to be unique (but you really should avoid this)</span></span>
-<span id="cb232-8"><a href="lists.html#cb232-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="lists.html#cb233-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb233-2"><a href="lists.html#cb233-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">a =</span> <span class="dv">5</span>,</span>
+<span id="cb233-3"><a href="lists.html#cb233-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">b =</span> <span class="dv">2</span>,</span>
+<span id="cb233-4"><a href="lists.html#cb233-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Long_Name =</span> <span class="fl">4.8</span>,</span>
+<span id="cb233-5"><a href="lists.html#cb233-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;named with spaces&quot;</span> <span class="ot">=</span> <span class="dv">0</span>,</span>
+<span id="cb233-6"><a href="lists.html#cb233-6" aria-hidden="true" tabindex="-1"></a>  <span class="dv">12</span>, <span class="co"># not every element needs a name</span></span>
+<span id="cb233-7"><a href="lists.html#cb233-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">a =</span> <span class="dv">20</span> <span class="co"># names don&#39;t have to be unique (but you really should avoid this)</span></span>
+<span id="cb233-8"><a href="lists.html#cb233-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 <div id="accessing-elements-in-a-list" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Accessing elements in a list</h2>
 <p>Get a tuple of the key and value</p>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="lists.html#cb233-1" aria-hidden="true" tabindex="-1"></a>x[<span class="st">&#39;a&#39;</span>] <span class="co"># by key name</span></span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="lists.html#cb234-1" aria-hidden="true" tabindex="-1"></a>x[<span class="st">&#39;a&#39;</span>] <span class="co"># by key name</span></span></code></pre></div>
 <pre><code>## $a
 ## [1] 5</code></pre>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="lists.html#cb235-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span>]   <span class="co"># by index</span></span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="lists.html#cb236-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span>]   <span class="co"># by index</span></span></code></pre></div>
 <pre><code>## $a
 ## [1] 5</code></pre>
 <p>Multiple keys</p>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="lists.html#cb237-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="st">&#39;b&#39;</span>, <span class="st">&#39;a&#39;</span>)] <span class="co"># by key name</span></span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="lists.html#cb238-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="st">&#39;b&#39;</span>, <span class="st">&#39;a&#39;</span>)] <span class="co"># by key name</span></span></code></pre></div>
 <pre><code>## $b
 ## [1] 2
 ## 
 ## $a
 ## [1] 5</code></pre>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="lists.html#cb239-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="st">&#39;b&#39;</span>, <span class="st">&#39;a&#39;</span>)] <span class="co"># by key name</span></span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="lists.html#cb240-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="st">&#39;b&#39;</span>, <span class="st">&#39;a&#39;</span>)] <span class="co"># by key name</span></span></code></pre></div>
 <pre><code>## $b
 ## [1] 2
 ## 
 ## $a
 ## [1] 5</code></pre>
 <p>Type the list name, then <code>$</code>, and press tab. R will pop up a list of keys to autocomplete. R uses <code>$</code> in the way that other languages use <code>.</code></p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="lists.html#cb241-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>Long_Name</span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="lists.html#cb242-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>Long_Name</span></code></pre></div>
 <pre><code>## [1] 4.8</code></pre>
 <p><em>Note: Only the value is returned.</em></p>
 </div>
@@ -274,25 +274,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.3</span> Brackets for real</h2>
 <p>Sometimes, you need to use double brackets. Why? Best I can figure out, R is a snarky shit and doesn’t believe you actually want what you said you want. So you need to use double brackets to explain to R that you’re sure this is what you want.</p>
 <p>Double brackets only works for single items, not subsetting.</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="lists.html#cb243-1" aria-hidden="true" tabindex="-1"></a>x[[<span class="st">&#39;a&#39;</span>]] <span class="co"># by key name</span></span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="lists.html#cb244-1" aria-hidden="true" tabindex="-1"></a>x[[<span class="st">&#39;a&#39;</span>]] <span class="co"># by key name</span></span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="lists.html#cb245-1" aria-hidden="true" tabindex="-1"></a>x[[<span class="dv">1</span>]]   <span class="co"># by index</span></span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="lists.html#cb246-1" aria-hidden="true" tabindex="-1"></a>x[[<span class="dv">1</span>]]   <span class="co"># by index</span></span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 </div>
 <div id="names-and-values" class="section level2" number="6.4">
 <h2><span class="header-section-number">6.4</span> Names and values</h2>
 <p>Use the <code>names()</code> function to get and set names. It behaves like an array.</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="lists.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="lists.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x)</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot;                 &quot;b&quot;                 &quot;Long_Name&quot;        
 ## [4] &quot;named with spaces&quot; &quot;&quot;                  &quot;a&quot;</code></pre>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="lists.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x)[<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="lists.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x)[<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;Long_Name&quot;</code></pre>
 <p>You can modify names by assigning strings to the resurned array. This is weird. Take a minute to let it sink in.</p>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="lists.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;first&quot;</span>, <span class="st">&quot;second&quot;</span>, <span class="st">&quot;third&quot;</span>, <span class="st">&quot;fourth&quot;</span>)</span>
-<span id="cb251-2"><a href="lists.html#cb251-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x)[<span class="dv">3</span>] <span class="ot">=</span> <span class="st">&quot;new name&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="lists.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;first&quot;</span>, <span class="st">&quot;second&quot;</span>, <span class="st">&quot;third&quot;</span>, <span class="st">&quot;fourth&quot;</span>)</span>
+<span id="cb252-2"><a href="lists.html#cb252-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x)[<span class="dv">3</span>] <span class="ot">=</span> <span class="st">&quot;new name&quot;</span></span></code></pre></div>
 <p>If all elements are the same type, this will get a vector of values</p>
-<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="lists.html#cb252-1" aria-hidden="true" tabindex="-1"></a>myList <span class="ot">=</span> <span class="fu">list</span>(<span class="at">a=</span><span class="dv">1</span>, <span class="at">b=</span><span class="dv">2</span>, <span class="at">c=</span><span class="dv">3</span>, <span class="at">d=</span><span class="dv">4</span>)</span>
-<span id="cb252-2"><a href="lists.html#cb252-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.vector</span>(<span class="fu">unlist</span>(myList))</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="lists.html#cb253-1" aria-hidden="true" tabindex="-1"></a>myList <span class="ot">=</span> <span class="fu">list</span>(<span class="at">a=</span><span class="dv">1</span>, <span class="at">b=</span><span class="dv">2</span>, <span class="at">c=</span><span class="dv">3</span>, <span class="at">d=</span><span class="dv">4</span>)</span>
+<span id="cb253-2"><a href="lists.html#cb253-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.vector</span>(<span class="fu">unlist</span>(myList))</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4</code></pre>
 
 
