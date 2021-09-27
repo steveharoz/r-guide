@@ -343,10 +343,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre class="code_result"><code>#&gt; [1] TRUE</code></pre>
 <div id="strings-with-special-characters" class="section level3" number="1.8.1">
 <h3><span class="header-section-number">1.8.1</span> Strings with special characters</h3>
-<p>If you want to use special characters in a string, you need to “escape it” by adding<br />
-</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="variables-math-comparisons-and-strings.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;string with backslashes </span><span class="sc">\\</span><span class="st"> and unicode \u263A&quot;</span></span></code></pre></div>
-<pre class="code_result"><code>#&gt; [1] &quot;string with backslashes \\ and unicode &lt;U+263A&gt;&quot;</code></pre>
+<p>If you want to use special characters in a string, you need to “escape it” by adding <code>\</code></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="variables-math-comparisons-and-strings.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;string with backslashes </span><span class="sc">\\</span><span class="st">, double quote </span><span class="sc">\&quot;</span><span class="st">, and unicode \u263A&quot;</span></span></code></pre></div>
+<pre class="code_result"><code>#&gt; [1] &quot;string with backslashes \\, double quote \&quot;, and unicode &lt;U+263A&gt;&quot;</code></pre>
 <p>Or you can use the literal <code>r"(text)"</code> which is useful for a Windows path or regular expression</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="variables-math-comparisons-and-strings.html#cb49-1" aria-hidden="true" tabindex="-1"></a>r<span class="st">&quot;(c:\hello\world)&quot;</span></span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] &quot;c:\\hello\\world&quot;</code></pre>

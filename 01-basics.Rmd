@@ -124,9 +124,9 @@ Comparison
 
 ### Strings with special characters
 
-If you want to use special characters in a string, you need to "escape it" by adding \
+If you want to use special characters in a string, you need to "escape it" by adding `\`
 ```{r}
-"string with backslashes \\ and unicode \u263A"
+"string with backslashes \\, double quote \", and unicode \u263A"
 ```
 
 Or you can use the literal `r"(text)"` which is useful for a Windows path or regular expression
