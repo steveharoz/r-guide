@@ -247,7 +247,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Simple array</p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="arrays.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">5</span>)</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] 8 6 7 5</code></pre>
-<p>For multiple types, R converts elements to the most complex type (usually a strong). For a real multi-typed collection, see <a href="lists.html">lists</a></p>
+<p>For multiple types, R converts elements to the most complex type (usually a string). For a real multi-typed collection, see <a href="lists.html">lists</a></p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="arrays.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">9</span>, <span class="st">&#39;hello&#39;</span>, <span class="dv">7</span>)</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] &quot;9&quot;     &quot;hello&quot; &quot;7&quot;</code></pre>
 </div>
@@ -308,7 +308,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Any order or number of repetitions</p>
 <div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="arrays.html#cb94-1" aria-hidden="true" tabindex="-1"></a>a[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">6</span>)]</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] 11 13 15 15 15</code></pre>
-<p>specify values using booleans (keep this in mind for the “Array operators” section)</p>
+<p>specify values using booleans (keep this in mind for the “Array operations” section)</p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="arrays.html#cb96-1" aria-hidden="true" tabindex="-1"></a>a[<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)]</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] 10 12 14 16 18 20</code></pre>
 </div>
@@ -432,7 +432,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": null,
+"link": "https://github.com/steveharoz/r-guide/blob/main/02-arrays.Rmd",
 "text": null
 },
 "download": ["_main.pdf"],
