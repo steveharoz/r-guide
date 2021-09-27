@@ -1,7 +1,7 @@
 
 # Lists
 
-A list is like an array but it can multiple types of elements.
+A list is like an array but it can contain multiple types of elements.
 
 ## Make a list
 ```{r tidy=FALSE}
@@ -26,7 +26,6 @@ x[1]   # by index
 
 Multiple keys
 ```{r}
-x[c('b', 'a')] # by key name
 x[c('b', 'a')] # by key name
 ```
 
