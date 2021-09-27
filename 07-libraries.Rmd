@@ -2,13 +2,19 @@
 
 A library or package is a collection of variables, datasets, functions, and/or operators.
 
-A library and a package are the same thing, but R people will insist there is a difference. Whenever talking to R people, you've got a 50-50 chance of getting it right. If you get it wrong, you're going to get a short lecture. Just nod, and say "yes, that makes sense". Otherwise, you'll get a much longer lecture.
+It's called a "package" when being installed `install.packages("tidyverse")` and a "library" when being loaded for use `library(tidyverse)`.
 
-The only practical difference is that it's called a "package" when being installed `install.packages("tidyverse")` and a "library" when being loaded for use `library(tidyverse)`.
+A library and a package are the same thing, but R people will insist there is a difference. Whenever talking to R people, you've got a 50-50 chance of getting it right. If you get it wrong, you're going to get a short lecture. Just nod, and say "yes, that makes sense, and the distinction is clearly important". If you say anything else, you'll get a much longer more boring lecture.
 
-I use these functions, so I don't have to worry about confusing the two.
+I define these functions, so I don't have to worry about confusing the two.
 
 ```{r}
 install.library = install.packages
 package = library
+```
+
+If you only want to access one or two functions or vairables in a library without loading the whole thing, you can use `::`
+
+```{r}
+dplyr::band_instruments
 ```

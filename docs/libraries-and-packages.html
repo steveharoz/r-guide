@@ -214,7 +214,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="libraries-and-packages.html"><a href="libraries-and-packages.html"><i class="fa fa-check"></i><b>7</b> Libraries and packages</a></li>
 <li class="divider"></li>
-<li><a href="https://creativecommons.org/licenses/by/4.0/" target="blank">Steve Haroz CC-BY</a></li> <!-- StatCounter --> <script type="text/javascript"> sc_project=1771316; sc_invisible=1; sc_partition=16; sc_security="caf1424b"; </script> <script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a href="http://www.statcounter.com/" target="_blank"><img class="statcounter" src="http://c17.statcounter.com/1771316/0/caf1424b/1/" alt="hit counter code" /></a></div></noscript> <!-- End StatCounter -->
+<li><a href="https://creativecommons.org/licenses/by/4.0/" target="blank">Steve Haroz CC-BY</a></li> <!-- StatCounter --> <script type="text/javascript"> var sc_project=1771316; var sc_invisible=1; var sc_security="caf1424b"; var sc_remove_link=1; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><img class="statcounter" src="https://c.statcounter.com/1771316/0/caf1424b/1/"></div></noscript> <!-- End StatCounter -->
 
 </ul>
 
@@ -236,11 +236,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="libraries-and-packages" class="section level1" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Libraries and packages</h1>
 <p>A library or package is a collection of variables, datasets, functions, and/or operators.</p>
-<p>A library and a package are the same thing, but R people will insist there is a difference. Whenever talking to R people, you’ve got a 50-50 chance of getting it right. If you get it wrong, you’re going to get a short lecture. Just nod, and say “yes, that makes sense”. Otherwise, you’ll get a much longer lecture.</p>
-<p>The only practical difference is that it’s called a “package” when being installed <code>install.packages("tidyverse")</code> and a “library” when being loaded for use <code>library(tidyverse)</code>.</p>
-<p>I use these functions, so I don’t have to worry about confusing the two.</p>
+<p>It’s called a “package” when being installed <code>install.packages("tidyverse")</code> and a “library” when being loaded for use <code>library(tidyverse)</code>.</p>
+<p>A library and a package are the same thing, but R people will insist there is a difference. Whenever talking to R people, you’ve got a 50-50 chance of getting it right. If you get it wrong, you’re going to get a short lecture. Just nod, and say “yes, that makes sense, and the distinction is clearly important”. If you say anything else, you’ll get a much longer more boring lecture.</p>
+<p>I define these functions, so I don’t have to worry about confusing the two.</p>
 <div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="libraries-and-packages.html#cb267-1" aria-hidden="true" tabindex="-1"></a>install.library <span class="ot">=</span> install.packages</span>
 <span id="cb267-2"><a href="libraries-and-packages.html#cb267-2" aria-hidden="true" tabindex="-1"></a>package <span class="ot">=</span> library</span></code></pre></div>
+<p>If you only want to access one or two functions or vairables in a library without loading the whole thing, you can use <code>::</code></p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="libraries-and-packages.html#cb268-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span>band_instruments</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 2
+##   name  plays 
+##   &lt;chr&gt; &lt;chr&gt; 
+## 1 John  guitar
+## 2 Paul  bass  
+## 3 Keith guitar</code></pre>
 
 </div>
             </section>
