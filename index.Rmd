@@ -27,6 +27,10 @@ This example-focused guide assumes you are familiar with programming concepts bu
 
 [R for programmers](http://www.johndcook.com/R_language_for_programmers.html)
 
+## Acknowledgements {.unlisted .unnumbered}
+
+People who have offered helpful suggestions: [\@pietroppeter](https://github.com/pietroppeter)
+
 # Prerequisites {.unnumbered}
 
 The prerequisites in [R for Data Science](https://r4ds.had.co.nz/introduction.html#prerequisites) are the same for this guide:

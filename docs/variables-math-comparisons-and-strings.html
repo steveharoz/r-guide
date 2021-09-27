@@ -149,8 +149,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#help"><i class="fa fa-check"></i><b>1.1</b> Help</a></li>
 <li class="chapter" data-level="1.2" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#assignment"><i class="fa fa-check"></i><b>1.2</b> Assignment</a></li>
-<li class="chapter" data-level="1.3" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#console-output"><i class="fa fa-check"></i><b>1.3</b> Console Output</a></li>
-<li class="chapter" data-level="1.4" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#names-with-weird-characters"><i class="fa fa-check"></i><b>1.4</b> Names with weird characters</a></li>
+<li class="chapter" data-level="1.3" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#names-with-weird-characters"><i class="fa fa-check"></i><b>1.3</b> Names with weird characters</a></li>
+<li class="chapter" data-level="1.4" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#console-output"><i class="fa fa-check"></i><b>1.4</b> Console Output</a></li>
 <li class="chapter" data-level="1.5" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#math"><i class="fa fa-check"></i><b>1.5</b> Math</a></li>
 <li class="chapter" data-level="1.6" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#comparisons"><i class="fa fa-check"></i><b>1.6</b> Comparisons</a></li>
 <li class="chapter" data-level="1.7" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#boolean"><i class="fa fa-check"></i><b>1.7</b> Boolean</a></li>
@@ -255,22 +255,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Note: No semi colon or “var” needed</em></p>
 <p>You’ll sometimes see <code>a &lt;- 6</code> instead of <code>a = 6</code>. Just use <code>=</code>. Some people insist on using <code>&lt;-</code>. They are silly.</p>
 </div>
-<div id="console-output" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Console Output</h2>
+<div id="names-with-weird-characters" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Names with weird characters</h2>
+<p>R allows names to have a <code>.</code>, and it’s common in many built-in functions. For your own variables, avoid it if possible. If you want to have a space in a name, use an underscore (<code>_</code>) instead of being rediculous.</p>
+<p><em>To learn how to access object members, see the</em> <a href="lists.html#accessing-elements-in-a-list">lists chapter</a><em>.</em></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="variables-math-comparisons-and-strings.html#cb3-1" aria-hidden="true" tabindex="-1"></a>this.is.a.variable.name <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb3-2"><a href="variables-math-comparisons-and-strings.html#cb3-2" aria-hidden="true" tabindex="-1"></a>better_name <span class="ot">=</span> <span class="dv">2</span></span></code></pre></div>
+<p>You can use any weird character like a space in a variable name by surrounding the name with `. Avoid it if you can, but sometimes it’s necessary when you load data from a file.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="variables-math-comparisons-and-strings.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">more than four (&gt;4)</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">5</span></span></code></pre></div>
+</div>
+<div id="console-output" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Console Output</h2>
 <p>Print <code>a</code> in the console</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="variables-math-comparisons-and-strings.html#cb3-1" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="variables-math-comparisons-and-strings.html#cb5-1" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] 6</code></pre>
 <p><em>The <code>[1]</code> is output because all values are arrays.</em></p>
-<p>Another option useful inside functions</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="variables-math-comparisons-and-strings.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a)</span></code></pre></div>
+<p>Another option that’s useful inside functions</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="variables-math-comparisons-and-strings.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a)</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] 6</code></pre>
-</div>
-<div id="names-with-weird-characters" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> Names with weird characters</h2>
-<p>You can use any weird character like a space in a variable name by surrounding the name with `. Avoid it if you can, but sometimes it’s necessary when you load data from a file.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="variables-math-comparisons-and-strings.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">more than four (&gt;4)</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">5</span></span>
-<span id="cb7-2"><a href="variables-math-comparisons-and-strings.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">more than four (&gt;4)</span><span class="st">`</span></span></code></pre></div>
-<pre class="code_result"><code>#&gt; [1] 5</code></pre>
 </div>
 <div id="math" class="section level2" number="1.5">
 <h2><span class="header-section-number">1.5</span> Math</h2>

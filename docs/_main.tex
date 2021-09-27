@@ -143,6 +143,11 @@ This example-focused guide assumes you are familiar with programming concepts bu
 
 \href{http://www.johndcook.com/R_language_for_programmers.html}{R for programmers}
 
+\hypertarget{acknowledgements}{%
+\section*{Acknowledgements}\label{acknowledgements}}
+
+People who have offered helpful suggestions: \href{https://github.com/pietroppeter}{@pietroppeter}
+
 \hypertarget{prerequisites}{%
 \chapter*{Prerequisites}\label{prerequisites}}
 \addcontentsline{toc}{chapter}{Prerequisites}
@@ -197,6 +202,28 @@ If you don't know the exact name of a function or variable, you can type part of
 
 You'll sometimes see \texttt{a\ \textless{}-\ 6} instead of \texttt{a\ =\ 6}. Just use \texttt{=}. Some people insist on using \texttt{\textless{}-}. They are silly.
 
+\hypertarget{names-with-weird-characters}{%
+\section{Names with weird characters}\label{names-with-weird-characters}}
+
+R allows names to have a \texttt{.}, and it's common in many built-in functions. For your own variables, avoid it if possible. If you want to have a space in a name, use an underscore (\texttt{\_}) instead of being rediculous.
+
+\emph{To learn how to access object members, see the} \href{lists.html\#accessing-elements-in-a-list}{lists chapter}\emph{.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{this.is.a.variable.name }\OtherTok{=} \DecValTok{1}
+\NormalTok{better\_name }\OtherTok{=} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+You can use any weird character like a space in a variable name by surrounding the name with `. Avoid it if you can, but sometimes it's necessary when you load data from a file.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textasciigrave{}}\AttributeTok{more than four (\textgreater{}4)}\StringTok{\textasciigrave{}} \OtherTok{=} \DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{console-output}{%
 \section{Console Output}\label{console-output}}
 
@@ -214,7 +241,7 @@ Print \texttt{a} in the console
 
 \emph{The \texttt{{[}1{]}} is output because all values are arrays.}
 
-Another option useful inside functions
+Another option that's useful inside functions
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -224,22 +251,6 @@ Another option useful inside functions
 
 \begin{verbatim}
 #> [1] 6
-\end{verbatim}
-
-\hypertarget{names-with-weird-characters}{%
-\section{Names with weird characters}\label{names-with-weird-characters}}
-
-You can use any weird character like a space in a variable name by surrounding the name with `. Avoid it if you can, but sometimes it's necessary when you load data from a file.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\StringTok{\textasciigrave{}}\AttributeTok{more than four (\textgreater{}4)}\StringTok{\textasciigrave{}} \OtherTok{=} \DecValTok{5}
-\StringTok{\textasciigrave{}}\AttributeTok{more than four (\textgreater{}4)}\StringTok{\textasciigrave{}}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-#> [1] 5
 \end{verbatim}
 
 \hypertarget{math}{%
@@ -1922,7 +1933,8 @@ Multiple keys
 #> [1] 5
 \end{verbatim}
 
-Type the list name, then \texttt{\$}, and press tab. R will pop up a list of keys to autocomplete. R uses \texttt{\$} in the way that other languages use \texttt{.}
+Type the list name, then \texttt{\$}, and press tab. R will pop up a list of keys to autocomplete.
+R uses \texttt{\$} in the way that other languages use \texttt{.}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1939,7 +1951,7 @@ Type the list name, then \texttt{\$}, and press tab. R will pop up a list of key
 \hypertarget{brackets-for-real}{%
 \section{Brackets for real}\label{brackets-for-real}}
 
-Sometimes, you need to use double brackets. Why? Best I can figure out, R is a snarky shit and doesn't believe you actually want what you said you want. So you need to use double brackets to explain to R that you're sure this is what you want.
+Sometimes, R will return the whole list or object even though you asked for just one element. So you need to use double brackets. Why? Because R is snarky and doesn't believe you actually want what you said. So you need to use double brackets to explain to R that you're sure this is what you want.
 
 Double brackets only works for single items, not subsetting.
 

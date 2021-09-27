@@ -1,8 +1,8 @@
 variables-math-comparisons-and-strings
 help
 assignment
-console-output
 names-with-weird-characters
+console-output
 math
 comparisons
 boolean

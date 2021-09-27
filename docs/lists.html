@@ -149,8 +149,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#help"><i class="fa fa-check"></i><b>1.1</b> Help</a></li>
 <li class="chapter" data-level="1.2" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#assignment"><i class="fa fa-check"></i><b>1.2</b> Assignment</a></li>
-<li class="chapter" data-level="1.3" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#console-output"><i class="fa fa-check"></i><b>1.3</b> Console Output</a></li>
-<li class="chapter" data-level="1.4" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#names-with-weird-characters"><i class="fa fa-check"></i><b>1.4</b> Names with weird characters</a></li>
+<li class="chapter" data-level="1.3" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#names-with-weird-characters"><i class="fa fa-check"></i><b>1.3</b> Names with weird characters</a></li>
+<li class="chapter" data-level="1.4" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#console-output"><i class="fa fa-check"></i><b>1.4</b> Console Output</a></li>
 <li class="chapter" data-level="1.5" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#math"><i class="fa fa-check"></i><b>1.5</b> Math</a></li>
 <li class="chapter" data-level="1.6" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#comparisons"><i class="fa fa-check"></i><b>1.6</b> Comparisons</a></li>
 <li class="chapter" data-level="1.7" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#boolean"><i class="fa fa-check"></i><b>1.7</b> Boolean</a></li>
@@ -269,14 +269,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 #&gt; 
 #&gt; $a
 #&gt; [1] 5</code></pre>
-<p>Type the list name, then <code>$</code>, and press tab. R will pop up a list of keys to autocomplete. R uses <code>$</code> in the way that other languages use <code>.</code></p>
+<p>Type the list name, then <code>$</code>, and press tab. R will pop up a list of keys to autocomplete.
+R uses <code>$</code> in the way that other languages use <code>.</code></p>
 <div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="lists.html#cb260-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>Long_Name</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] 4.8</code></pre>
 <p><em>Note: Only the value is returned.</em></p>
 </div>
 <div id="brackets-for-real" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Brackets for real</h2>
-<p>Sometimes, you need to use double brackets. Why? Best I can figure out, R is a snarky shit and doesn’t believe you actually want what you said you want. So you need to use double brackets to explain to R that you’re sure this is what you want.</p>
+<p>Sometimes, R will return the whole list or object even though you asked for just one element. So you need to use double brackets. Why? Because R is snarky and doesn’t believe you actually want what you said. So you need to use double brackets to explain to R that you’re sure this is what you want.</p>
 <p>Double brackets only works for single items, not subsetting.</p>
 <div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="lists.html#cb262-1" aria-hidden="true" tabindex="-1"></a>x[[<span class="st">&#39;a&#39;</span>]] <span class="co"># by key name</span></span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] 5</code></pre>

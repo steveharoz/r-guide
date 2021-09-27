@@ -30,15 +30,17 @@ x[c('b', 'a')] # by key name
 x[c('b', 'a')] # by key name
 ```
 
-Type the list name, then `$`, and press tab. R will pop up a list of keys to autocomplete. R uses `$` in the way that other languages use `.`
+Type the list name, then `$`, and press tab. R will pop up a list of keys to autocomplete. 
+R uses `$` in the way that other languages use `.`
 ```{r}
 x$Long_Name
 ```
 *Note: Only the value is returned.*
 
+
 ## Brackets for real
 
-Sometimes, you need to use double brackets. Why? Best I can figure out, R is a snarky shit and doesn't believe you actually want what you said you want. So you need to use double brackets to explain to R that you're sure this is what you want.
+Sometimes, R will return the whole list or object even though you asked for just one element. So you need to use double brackets. Why? Because R is snarky and doesn't believe you actually want what you said. So you need to use double brackets to explain to R that you're sure this is what you want.
 
 Double brackets only works for single items, not subsetting.
 ```{r}
