@@ -161,13 +161,11 @@ data = factor(data)
 data
 ```
 
-*Note: The values are in the order they appear in the array*
-
 The array is now an integer array with a dictionary
 
 ```{r}
 as.numeric(data)
-data[5]
+data[1]
 ```
 
 See the different values in the array
