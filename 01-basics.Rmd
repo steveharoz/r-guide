@@ -75,6 +75,7 @@ floor(4.82)
 ceiling(4.82)
 ```
 
+Rounding
 ```{r}
 round(4.4) # round down
 round(4.6) # round up
@@ -82,11 +83,10 @@ round(4.5) # round to even (down)
 round(5.5) # round to even (up)
 ```
 
-
 Other basic math functions
 ```{r tidy=FALSE}
-sin(pi/2) + cos(0)
-log(exp(2)) # ln is the default base
+sin(pi/2) + cos(0) # radians, not degrees
+log(exp(2)) # base e (like ln) is the default
 log(100, 10) # use base 10
 ```
 
