@@ -1,11 +1,11 @@
 ---
 title: "A Succinct Intro to R"
-author: "Steve Haroz"
+author: "<a href='https://twitter.com/sharoz'>Steve Haroz</a>"
 date: "`r 2021 #Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 # bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
+url: http://r-guide.steveharoz.com/
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
   This book is intended as a short introduction to the R language. 

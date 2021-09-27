@@ -73,8 +73,15 @@ Functions for floats
 ```{r tidy=FALSE}
 floor(4.82)
 ceiling(4.82)
-round(4.82)
 ```
+
+```{r}
+round(4.4) # round down
+round(4.6) # round up
+round(4.5) # round to even (down)
+round(5.5) # round to even (up)
+```
+
 
 Other basic math functions
 ```{r tidy=FALSE}
