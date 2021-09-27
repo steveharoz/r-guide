@@ -244,37 +244,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="types.html#cb136-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> .<span class="dv">58</span></span>
 <span id="cb136-2"><a href="types.html#cb136-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> .<span class="dv">08</span></span>
 <span id="cb136-3"><a href="types.html#cb136-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">-</span> y <span class="sc">==</span> <span class="fl">0.5</span></span></code></pre></div>
-<pre><code>## [1] FALSE</code></pre>
+<pre class="code_result"><code>#&gt; [1] FALSE</code></pre>
 <div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="types.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(x<span class="sc">-</span>y, <span class="at">digits=</span><span class="dv">1</span>) <span class="sc">==</span> <span class="fu">round</span>(<span class="fl">0.5</span>, <span class="at">digits=</span><span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<pre class="code_result"><code>#&gt; [1] TRUE</code></pre>
 <p>Numeric division returns double</p>
 <div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="types.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="sc">/</span> <span class="dv">2</span> <span class="co"># double</span></span></code></pre></div>
-<pre><code>## [1] 4.5</code></pre>
+<pre class="code_result"><code>#&gt; [1] 4.5</code></pre>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="types.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="sc">%/%</span> <span class="dv">2</span> <span class="co"># drop the part after the decimal</span></span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
+<pre class="code_result"><code>#&gt; [1] 4</code></pre>
 </div>
 <div id="strings-1" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Strings</h2>
 <p>Single and double quotes are the same in R, but a given string needs the same in the beginning and end</p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="types.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;hello world&quot;</span></span></code></pre></div>
-<pre><code>## [1] &quot;hello world&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;hello world&quot;</code></pre>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="types.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;hello world&#39;</span></span></code></pre></div>
-<pre><code>## [1] &quot;hello world&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;hello world&quot;</code></pre>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="types.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;single quote &#39; in a string&quot;</span></span></code></pre></div>
-<pre><code>## [1] &quot;single quote &#39; in a string&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;single quote &#39; in a string&quot;</code></pre>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="types.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;double quote &quot; in a string&#39;</span></span></code></pre></div>
-<pre><code>## [1] &quot;double quote \&quot; in a string&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;double quote \&quot; in a string&quot;</code></pre>
 <div id="concatenation-1" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Concatenation</h3>
 <p>Concatenate with a space in between</p>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="types.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&#39;hello&#39;</span>, <span class="st">&#39;world&#39;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;hello world&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;hello world&quot;</code></pre>
 <p>Use a difference separator</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="types.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&#39;hello&#39;</span>, <span class="st">&#39;world&#39;</span>, <span class="at">sep=</span><span class="st">&#39;_&#39;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;hello_world&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;hello_world&quot;</code></pre>
 <p>No separator</p>
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="types.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">&#39;hello&#39;</span>, <span class="st">&#39;world&#39;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;helloworld&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;helloworld&quot;</code></pre>
 </div>
 </div>
 <div id="dates" class="section level2" number="3.3">
@@ -284,44 +284,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="finding-the-type-of-a-variable" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Finding the type of a variable</h2>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="types.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="st">&#39;hi&#39;</span>, <span class="cn">TRUE</span>))</span></code></pre></div>
-<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;character&quot;</code></pre>
 </div>
 <div id="checking-the-type" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> Checking the type</h2>
 <p>What’s the type?</p>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="types.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;numeric&quot;</code></pre>
 <p>Remember, arrays are the same as single values.</p>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="types.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;integer&quot;</code></pre>
 <p>Test if numeric</p>
 <div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="types.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<pre class="code_result"><code>#&gt; [1] TRUE</code></pre>
 <p>Test if string</p>
 <div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="types.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.character</span>(<span class="st">&#39;hi&#39;</span>)</span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<pre class="code_result"><code>#&gt; [1] TRUE</code></pre>
 <p>Test if boolean</p>
 <div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="types.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.logical</span>(<span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<pre class="code_result"><code>#&gt; [1] TRUE</code></pre>
 </div>
 <div id="converting-and-parsing" class="section level2" number="3.6">
 <h2><span class="header-section-number">3.6</span> Converting and parsing</h2>
 <p>Parse or convert to numeric</p>
 <div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="types.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="fu">c</span>(<span class="st">&quot;5&quot;</span>, <span class="cn">TRUE</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">&quot;abc&quot;</span>))</span></code></pre></div>
-<pre><code>## Warning: NAs introduced by coercion</code></pre>
-<pre><code>## [1]  5 NA  1  2  3 NA</code></pre>
+<pre class="code_result warning"><code>#&gt; Warning: NAs introduced by coercion</code></pre>
+<pre class="code_result"><code>#&gt; [1]  5 NA  1  2  3 NA</code></pre>
 <p>To string</p>
 <div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="types.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;5&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;5&quot;</code></pre>
 <div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="types.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;0.3333333&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;0.3333333&quot;</code></pre>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="types.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span> , <span class="at">digits =</span> <span class="dv">16</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;0.3333333333333333&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;0.3333333333333333&quot;</code></pre>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="types.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(<span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;TRUE&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;TRUE&quot;</code></pre>
 <p>Convert to boolean. Zero is false. Other numbers are true.</p>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="types.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">2</span>)</span></code></pre></div>
-<pre><code>## [1] FALSE  TRUE  TRUE</code></pre>
+<pre class="code_result"><code>#&gt; [1] FALSE  TRUE  TRUE</code></pre>
 </div>
 <div id="special-types" class="section level2" number="3.7">
 <h2><span class="header-section-number">3.7</span> Special types</h2>
@@ -329,13 +329,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">3.7.1</span> NA</h3>
 <p>Missing values are very common in datasets.</p>
 <div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="types.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(<span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">1</span>, <span class="st">&quot;&quot;</span>))</span></code></pre></div>
-<pre><code>## [1]  TRUE FALSE FALSE</code></pre>
+<pre class="code_result"><code>#&gt; [1]  TRUE FALSE FALSE</code></pre>
 <p>Any operation performed on NA will also yield NA. So, you can operate on arrays with missing values.</p>
 <div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="types.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">5</span>, <span class="cn">NA</span>, <span class="dv">7</span>) <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
-<pre><code>## [1]  6 NA  8</code></pre>
+<pre class="code_result"><code>#&gt; [1]  6 NA  8</code></pre>
 <p>Be careful about aggregation functions like <code>min()</code>, <code>max()</code>, and <code>mean()</code>. To ignore NAs, use the <code>na.rm</code> parameter.</p>
 <div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="types.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="cn">NA</span>, <span class="dv">7</span>), <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1] 6</code></pre>
+<pre class="code_result"><code>#&gt; [1] 6</code></pre>
 </div>
 <div id="factor" class="section level3" number="3.7.2">
 <h3><span class="header-section-number">3.7.2</span> Factor</h3>
@@ -343,23 +343,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Create an array with many repeating values</p>
 <div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="types.html#cb189-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;hello&quot;</span>, <span class="st">&quot;cruel&quot;</span>, <span class="st">&quot;world&quot;</span>), <span class="dv">12</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
 <span id="cb189-2"><a href="types.html#cb189-2" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
-<pre><code>##  [1] &quot;hello&quot; &quot;world&quot; &quot;world&quot; &quot;hello&quot; &quot;cruel&quot; &quot;hello&quot; &quot;world&quot; &quot;hello&quot; &quot;world&quot;
-## [10] &quot;world&quot; &quot;hello&quot; &quot;cruel&quot;</code></pre>
+<pre class="code_result"><code>#&gt;  [1] &quot;world&quot; &quot;cruel&quot; &quot;world&quot; &quot;hello&quot; &quot;world&quot; &quot;hello&quot; &quot;cruel&quot; &quot;world&quot; &quot;world&quot;
+#&gt; [10] &quot;hello&quot; &quot;cruel&quot; &quot;world&quot;</code></pre>
 <p>Make it into a <code>factor</code></p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="types.html#cb191-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">factor</span>(data)</span>
 <span id="cb191-2"><a href="types.html#cb191-2" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
-<pre><code>##  [1] hello world world hello cruel hello world hello world world hello cruel
-## Levels: cruel hello world</code></pre>
+<pre class="code_result"><code>#&gt;  [1] world cruel world hello world hello cruel world world hello cruel world
+#&gt; Levels: cruel hello world</code></pre>
 <p><em>Note: The values are in the order they appear in the array</em></p>
 <p>The array is now an integer array with a dictionary</p>
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="types.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(data)</span></code></pre></div>
-<pre><code>##  [1] 2 3 3 2 1 2 3 2 3 3 2 1</code></pre>
+<pre class="code_result"><code>#&gt;  [1] 3 1 3 2 3 2 1 3 3 2 1 3</code></pre>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="types.html#cb195-1" aria-hidden="true" tabindex="-1"></a>data[<span class="dv">5</span>]</span></code></pre></div>
-<pre><code>## [1] cruel
-## Levels: cruel hello world</code></pre>
+<pre class="code_result"><code>#&gt; [1] world
+#&gt; Levels: cruel hello world</code></pre>
 <p>See the different values in the array</p>
 <div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="types.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(data)</span></code></pre></div>
-<pre><code>## [1] &quot;cruel&quot; &quot;hello&quot; &quot;world&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;cruel&quot; &quot;hello&quot; &quot;world&quot;</code></pre>
 <p>For more info, see <a href="https://forcats.tidyverse.org/">forcats</a>.</p>
 
 </div>

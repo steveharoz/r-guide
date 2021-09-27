@@ -240,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb210-2"><a href="functions.html#cb210-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;hello world&quot;</span>)</span>
 <span id="cb210-3"><a href="functions.html#cb210-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb210-4"><a href="functions.html#cb210-4" aria-hidden="true" tabindex="-1"></a><span class="fu">foo</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;hello world&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;hello world&quot;</code></pre>
 <p><em>Note: in the function, you need to use <code>print</code> to output</em></p>
 <div id="parameters" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Parameters</h2>
@@ -249,19 +249,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb212-2"><a href="functions.html#cb212-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x <span class="sc">+</span> <span class="dv">1</span>)</span>
 <span id="cb212-3"><a href="functions.html#cb212-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb212-4"><a href="functions.html#cb212-4" aria-hidden="true" tabindex="-1"></a><span class="fu">addOne</span>(<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## [1] 6</code></pre>
+<pre class="code_result"><code>#&gt; [1] 6</code></pre>
 <p><em>The syntax for return is like a function: <code>return(value)</code></em></p>
 <p>Parameter order can be arbitrary</p>
 <div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="functions.html#cb214-1" aria-hidden="true" tabindex="-1"></a>add <span class="ot">=</span> <span class="cf">function</span> (x, y) {</span>
 <span id="cb214-2"><a href="functions.html#cb214-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x <span class="sc">+</span> (y<span class="sc">*</span><span class="dv">10</span>))</span>
 <span id="cb214-3"><a href="functions.html#cb214-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb214-4"><a href="functions.html#cb214-4" aria-hidden="true" tabindex="-1"></a><span class="fu">add</span>(<span class="at">x=</span><span class="dv">2</span>, <span class="at">y=</span><span class="dv">10</span>)</span></code></pre></div>
-<pre><code>## [1] 102</code></pre>
+<pre class="code_result"><code>#&gt; [1] 102</code></pre>
 <div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="functions.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add</span>(<span class="at">y=</span><span class="dv">10</span>, <span class="at">x=</span><span class="dv">2</span>)</span></code></pre></div>
-<pre><code>## [1] 102</code></pre>
+<pre class="code_result"><code>#&gt; [1] 102</code></pre>
 <p>Functions are vectorized by default</p>
 <div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="functions.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">addOne</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## [1] 2 3 4 5 6</code></pre>
+<pre class="code_result"><code>#&gt; [1] 2 3 4 5 6</code></pre>
 <p>All parameters are pass-by-value because functions are immutable.</p>
 <div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="functions.html#cb220-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">5</span></span>
 <span id="cb220-2"><a href="functions.html#cb220-2" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">=</span> <span class="cf">function</span> (a) {</span>
@@ -269,11 +269,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb220-4"><a href="functions.html#cb220-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Inside the function as a parameter: &quot;</span>, a))</span>
 <span id="cb220-5"><a href="functions.html#cb220-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb220-6"><a href="functions.html#cb220-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Before the function: &quot;</span>, a))</span></code></pre></div>
-<pre><code>## [1] &quot;Before the function:  5&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;Before the function:  5&quot;</code></pre>
 <div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="functions.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">foo</span>(<span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;Inside the function as a parameter:  6&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;Inside the function as a parameter:  6&quot;</code></pre>
 <div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="functions.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;After the function: &quot;</span>, a))</span></code></pre></div>
-<pre><code>## [1] &quot;After the function:  5&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;After the function:  5&quot;</code></pre>
 </div>
 <div id="scope" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Scope</h2>
@@ -286,12 +286,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb226-6"><a href="functions.html#cb226-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Inside the function b =&quot;</span>, b))</span>
 <span id="cb226-7"><a href="functions.html#cb226-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb226-8"><a href="functions.html#cb226-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Before the function a =&quot;</span>, a))</span></code></pre></div>
-<pre><code>## [1] &quot;Before the function a = 5&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;Before the function a = 5&quot;</code></pre>
 <div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="functions.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">foo</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;Inside the function a = 6&quot;
-## [1] &quot;Inside the function b = 100&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;Inside the function a = 6&quot;
+#&gt; [1] &quot;Inside the function b = 100&quot;</code></pre>
 <div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="functions.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;After the function a =&quot;</span>, a))</span></code></pre></div>
-<pre><code>## [1] &quot;After the function a = 5&quot;</code></pre>
+<pre class="code_result"><code>#&gt; [1] &quot;After the function a = 5&quot;</code></pre>
 <div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="functions.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="co">#trying to use `b` will cause an error because it is out of scope</span></span></code></pre></div>
 </div>
 <div id="a-function-in-a-function" class="section level2" number="5.3">
@@ -305,8 +305,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb233-6"><a href="functions.html#cb233-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">c</span>(<span class="fu">square</span>(a), <span class="fu">square</span>(b)))</span>
 <span id="cb233-7"><a href="functions.html#cb233-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb233-8"><a href="functions.html#cb233-8" aria-hidden="true" tabindex="-1"></a><span class="fu">foo</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span></code></pre></div>
-<pre><code>## [1]  1 10
-## [1] 1e+00 1e+10</code></pre>
+<pre class="code_result"><code>#&gt; [1]  1 10
+#&gt; [1] 1e+00 1e+10</code></pre>
 </div>
 <div id="dot-dot-dot" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Dot dot dot</h2>
@@ -317,19 +317,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb235-5"><a href="functions.html#cb235-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">foo</span>(a, ...))</span>
 <span id="cb235-6"><a href="functions.html#cb235-6" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb235-7"><a href="functions.html#cb235-7" aria-hidden="true" tabindex="-1"></a><span class="fu">bar</span>(<span class="dv">50</span>, <span class="dv">10</span>)</span></code></pre></div>
-<pre><code>## [1] 5</code></pre>
+<pre class="code_result"><code>#&gt; [1] 5</code></pre>
 <div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="functions.html#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bar</span>(<span class="at">b =</span> <span class="dv">10</span>, <span class="dv">50</span>) <span class="co"># named works too</span></span></code></pre></div>
-<pre><code>## [1] 5</code></pre>
+<pre class="code_result"><code>#&gt; [1] 5</code></pre>
 </div>
 <div id="operators" class="section level2" number="5.5">
 <h2><span class="header-section-number">5.5</span> Operators</h2>
 <p>Operators like <code>+</code> or <code>-</code> or even <code>[</code> are all functions. To use them like a function, surround them with `.</p>
 <div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="functions.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">+</span><span class="st">`</span>(<span class="dv">3</span>, <span class="dv">4</span>)</span></code></pre></div>
-<pre><code>## [1] 7</code></pre>
+<pre class="code_result"><code>#&gt; [1] 7</code></pre>
 <div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="functions.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">*</span><span class="st">`</span>(<span class="dv">3</span>, <span class="dv">4</span>)</span></code></pre></div>
-<pre><code>## [1] 12</code></pre>
+<pre class="code_result"><code>#&gt; [1] 12</code></pre>
 <div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="functions.html#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">[</span><span class="st">`</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">2</span>) <span class="co"># you don&#39;t need the close bracket (])</span></span></code></pre></div>
-<pre><code>## [1] 6</code></pre>
+<pre class="code_result"><code>#&gt; [1] 6</code></pre>
 
 </div>
 </div>

@@ -241,14 +241,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>I define these functions, so I don’t have to worry about confusing the two.</p>
 <div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="libraries-and-packages.html#cb267-1" aria-hidden="true" tabindex="-1"></a>install.library <span class="ot">=</span> install.packages</span>
 <span id="cb267-2"><a href="libraries-and-packages.html#cb267-2" aria-hidden="true" tabindex="-1"></a>package <span class="ot">=</span> library</span></code></pre></div>
-<p>If you only want to access one or two functions or vairables in a library without loading the whole thing, you can use <code>::</code></p>
+<p>If you only want to access one function or variable in a library without loading the whole thing, you can use <code>::</code></p>
 <div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="libraries-and-packages.html#cb268-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span>band_instruments</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 2
-##   name  plays 
-##   &lt;chr&gt; &lt;chr&gt; 
-## 1 John  guitar
-## 2 Paul  bass  
-## 3 Keith guitar</code></pre>
+<pre class="code_result"><code>#&gt; # A tibble: 3 x 2
+#&gt;   name  plays 
+#&gt;   &lt;chr&gt; &lt;chr&gt; 
+#&gt; 1 John  guitar
+#&gt; 2 Paul  bass  
+#&gt; 3 Keith guitar</code></pre>
 
 </div>
             </section>

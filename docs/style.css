@@ -18,10 +18,26 @@ p + div.sourceCode {
   margin-top: -0.5em;
 }
 
-div.sourceCode + pre, div.sourceCode + pre + pre {
-    margin-top: -0.95em !important
+div.sourceCode + .code_result, div.sourceCode + .code_result + .code_result {
+    margin-top: -1.1em !important
 }
 
-div.sourceCode + pre + p, div.sourceCode + pre + pre + p {
+.code_result + p, div.sourceCode + .code_result + .code_result + p {
   margin-top: 1.5em !important;
+}
+
+
+.book .book-body .page-wrapper .page-inner section.normal div.sourceCode pre {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.book .book-body .page-wrapper .page-inner section.normal pre.code_result:not(.warning) {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.book .book-body .page-wrapper .page-inner section.normal pre.code_result {
+  background: #f0f0f0;
+}
+.error, .message, .warning {
+  
 }

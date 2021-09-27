@@ -13,7 +13,7 @@ install.library = install.packages
 package = library
 ```
 
-If you only want to access one or two functions or vairables in a library without loading the whole thing, you can use `::`
+If you only want to access one function or variable in a library without loading the whole thing, you can use `::`
 
 ```{r}
 dplyr::band_instruments
