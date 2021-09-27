@@ -53,9 +53,9 @@ Print `a` in the console
 a
 ```
 
-*The `[1]` is output because all values are arrays.*
+*The `[1]` is output because it is the first element in an array. For more info, see the [arrays chapter](arrays.html).*
 
-Another option that's useful inside functions
+Another option that's useful inside functions, which don't output most results
 
 ```{r}
 print(a)
