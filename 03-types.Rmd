@@ -44,7 +44,7 @@ Concatenate with a space in between
 paste('hello', 'world')
 ```
 
-Use a difference separator
+Use a different separator
 
 ```{r}
 paste('hello', 'world', sep='_')

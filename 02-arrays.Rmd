@@ -18,7 +18,7 @@ Simple array
 c(8, 6, 7, 5)
 ```
 
-For multiple types, R converts elements to the most complex type (usually a strong). For a real multi-typed collection, see [lists](lists.html)
+For multiple types, R converts elements to the most complex type (usually a string). For a real multi-typed collection, see [lists](lists.html)
 
 ```{r}
 c(9, 'hello', 7)
@@ -110,7 +110,7 @@ Any order or number of repetitions
 a[c(2, 4, 6, 6, 6)]
 ```
 
-specify values using booleans (keep this in mind for the "Array operators" section)
+specify values using booleans (keep this in mind for the "Array operations" section)
 
 ```{r}
 a[c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE)]
