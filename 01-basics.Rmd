@@ -4,18 +4,15 @@
 ## Help 
 
 ```{r tidy=FALSE, eval=FALSE}
-# Hi. I'm a comment.
+# Hi. This is a comment.
 
 # If you know a function's name, but not how to use it:
-?chisq.test
-
-# You can also type part of the name and press tab to autocomplete and see a bit info
-
-# if you know what you want to do, but don't know the function name:
-??chisquare
+?t.test
 ```
 
+You can also mouseover a function and press F1.
 
+If you don't know the exact name of a function or variable, you can type part of the name and press tab to autocomplete and see some info about it.
 
 ## Assignment
 
