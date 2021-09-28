@@ -181,11 +181,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="types.html"><a href="types.html#finding-the-type-of-a-variable"><i class="fa fa-check"></i><b>3.4</b> Finding the type of a variable</a></li>
 <li class="chapter" data-level="3.5" data-path="types.html"><a href="types.html#checking-the-type"><i class="fa fa-check"></i><b>3.5</b> Checking the type</a></li>
 <li class="chapter" data-level="3.6" data-path="types.html"><a href="types.html#converting-and-parsing"><i class="fa fa-check"></i><b>3.6</b> Converting and parsing</a></li>
-<li class="chapter" data-level="3.7" data-path="types.html"><a href="types.html#special-types"><i class="fa fa-check"></i><b>3.7</b> Special types</a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="types.html"><a href="types.html#na"><i class="fa fa-check"></i><b>3.7.1</b> NA</a></li>
-<li class="chapter" data-level="3.7.2" data-path="types.html"><a href="types.html#factor"><i class="fa fa-check"></i><b>3.7.2</b> Factor</a></li>
-</ul></li>
+<li class="chapter" data-level="3.7" data-path="types.html"><a href="types.html#missing-values-na"><i class="fa fa-check"></i><b>3.7</b> Missing values (NA)</a></li>
+<li class="chapter" data-level="3.8" data-path="types.html"><a href="types.html#factor"><i class="fa fa-check"></i><b>3.8</b> Factor</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="control-flow.html"><a href="control-flow.html"><i class="fa fa-check"></i><b>4</b> Control Flow</a>
 <ul>
@@ -235,10 +232,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>It’s called a “package” when being installed <code>install.packages("tidyverse")</code> and a “library” when being loaded for use <code>library(tidyverse)</code>.</p>
 <p>A library and a package are the same thing, but R people will insist there is a difference. Whenever talking to R people, you’ve got a 50-50 chance of getting it right. If you get it wrong, you’re going to get a short lecture. Just nod, and say “yes, that makes sense, and the distinction is clearly important”. If you say anything else, you’ll get a much longer more boring lecture.</p>
 <p>I define these functions, so I don’t have to worry about confusing the two.</p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="libraries-and-packages.html#cb270-1" aria-hidden="true" tabindex="-1"></a>install.library <span class="ot">=</span> install.packages</span>
-<span id="cb270-2"><a href="libraries-and-packages.html#cb270-2" aria-hidden="true" tabindex="-1"></a>package <span class="ot">=</span> library</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="libraries-and-packages.html#cb272-1" aria-hidden="true" tabindex="-1"></a>install.library <span class="ot">=</span> install.packages</span>
+<span id="cb272-2"><a href="libraries-and-packages.html#cb272-2" aria-hidden="true" tabindex="-1"></a>package <span class="ot">=</span> library</span></code></pre></div>
 <p>If you only want to access one function or variable in a library without loading the whole thing, you can use <code>::</code></p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="libraries-and-packages.html#cb271-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span>band_instruments</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="libraries-and-packages.html#cb273-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span>band_instruments</span></code></pre></div>
 <pre class="code_result"><code>#&gt; # A tibble: 3 x 2
 #&gt;   name  plays 
 #&gt;   &lt;chr&gt; &lt;chr&gt; 

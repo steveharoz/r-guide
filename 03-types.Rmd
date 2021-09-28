@@ -167,9 +167,13 @@ Convert to boolean. Zero is false. Other numbers are true.
 as.logical(0:2)
 ```
 
-## Special types
+## Missing values (NA)
 
-### NA
+Any type can have missing values.
+
+```{r}
+class(c(1, 2, 3, NA, 5))
+```
 
 Missing values are very common in datasets.
 
@@ -177,7 +181,7 @@ Missing values are very common in datasets.
 is.na(c(NA, 1, ""))
 ```
 
-Any operation performed on NA will also yield NA. So, you can operate on arrays with missing values.
+Any operation performed on NA will also yield NA. So, you can still operate on arrays with missing values.
 
 ```{r}
 c(5, NA, 7) + 1
@@ -189,7 +193,7 @@ Be careful about aggregation functions like `min()`, `max()`, and `mean()`. To i
 mean(c(5, NA, 7), na.rm=TRUE)
 ```
 
-### Factor
+## Factor
 
 A factor is like an enum in other languages. It encodes strings as integers via a dictionary.
 
@@ -220,4 +224,4 @@ See the different values in the array
 levels(data)
 ```
 
-For more info, see [forcats](https://forcats.tidyverse.org/).
+For more info, see the [factors chapter in R4DS](https://r4ds.had.co.nz/factors.html).
