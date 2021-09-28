@@ -9,7 +9,7 @@
 ?t.test
 ```
 
-You can also mouseover a function and press F1.
+You can also click a function and press F1 to see the help page.
 
 If you don't know the exact name of a function or variable, you can type part of the name and press tab to autocomplete and see some info about it.
 

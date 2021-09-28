@@ -2,7 +2,7 @@
 
 ## Numbers
 
-R has integers but defaults all numbers to `numeric` which is a double precision float
+R has integers but defaults all numbers to `numeric` which is a double precision float.
 
 ```{r}
 x = 5 # no decimal but still a double
@@ -18,10 +18,10 @@ x - y == 0.5
 round(x-y, digits=1) == round(0.5, digits=1)
 ```
 
-Numeric division returns double
+Numeric division returns a double
 
 ```{r}
-9 / 2 # double
+9 / 2 # double precision float
 9 %/% 2 # drop the part after the decimal
 ```
 

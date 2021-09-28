@@ -237,7 +237,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 3</span> Types</h1>
 <div id="numbers" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Numbers</h2>
-<p>R has integers but defaults all numbers to <code>numeric</code> which is a double precision float</p>
+<p>R has integers but defaults all numbers to <code>numeric</code> which is a double precision float.</p>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="types.html#cb141-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">5</span> <span class="co"># no decimal but still a double</span></span>
 <span id="cb141-2"><a href="types.html#cb141-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> x <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
 <p>Good ol’ float point comparison</p>
@@ -247,8 +247,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre class="code_result"><code>#&gt; [1] FALSE</code></pre>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="types.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(x<span class="sc">-</span>y, <span class="at">digits=</span><span class="dv">1</span>) <span class="sc">==</span> <span class="fu">round</span>(<span class="fl">0.5</span>, <span class="at">digits=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] TRUE</code></pre>
-<p>Numeric division returns double</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="types.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="sc">/</span> <span class="dv">2</span> <span class="co"># double</span></span></code></pre></div>
+<p>Numeric division returns a double</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="types.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="sc">/</span> <span class="dv">2</span> <span class="co"># double precision float</span></span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] 4.5</code></pre>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="types.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="sc">%/%</span> <span class="dv">2</span> <span class="co"># drop the part after the decimal</span></span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] 4</code></pre>
