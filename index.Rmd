@@ -37,4 +37,4 @@ The prerequisites in [R for Data Science](https://r4ds.had.co.nz/introduction.ht
 
 1.  Install R for [Windows](https://cloud.r-project.org/bin/windows/base/), [Mac](https://cloud.r-project.org/bin/macosx/), or your [variant of Linux](https://cloud.r-project.org/bin/linux/).
 2.  Install [RStudio](https://www.rstudio.com/products/rstudio/).
-3.  (optional) Run RStudio, and install the tidyverse by typing the following into the RStudio console: `install.packages("tidyverse")`
+3.  Run RStudio, and install the tidyverse by typing the following into the RStudio console: `install.packages("tidyverse")`

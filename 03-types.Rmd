@@ -1,5 +1,13 @@
 # Types
 
+For this chapter, you'll need to load the tidyverse library. [More on libraries](libraries-and-packages.html)
+
+R is dramatic and gives "conflict" messages that look like errors. Ignore them.
+
+```{r message=FALSE}
+library(tidyverse)
+```
+
 ## Numbers
 
 R has integers but defaults all numbers to `numeric` which is a double precision float.
@@ -36,7 +44,42 @@ Single and double quotes are the same in R, but a given string needs the same in
 'double quote " in a string'
 ```
 
-### Concatenation
+Strings are not character arrays in R, so array techniques may not work as expected.
+
+String length
+
+```{r}
+length('hello world') # R sees this is one string, not many charaters
+str_length('hello world') # the actual length of the string
+```
+
+Substring
+
+```{r}
+str_sub('hello world', 2, 10)
+```
+
+Comparison
+
+```{r tidy=FALSE}
+'hello' == "hello"
+```
+
+### Strings with special characters
+
+If you want to use special characters in a string, you need to "escape it" by adding `\`
+
+```{r}
+"string with backslashes \\, double quote \", and unicode \u263A"
+```
+
+Or you can use the literal `r"(text)"` which is useful for a Windows path or regular expression
+
+```{r}
+r"(c:\hello\world)"
+```
+
+### String Concatenation
 
 Concatenate with a space in between
 
@@ -53,12 +96,15 @@ paste('hello', 'world', sep='_')
 No separator
 
 ```{r}
-paste0('hello', 'world')
+paste('hello', 'world', sep='')
+paste0('hello', 'world') # a shortcut function for no separator
 ```
+
+See the [strings chapter in R4DS](https://r4ds.had.co.nz/strings.html) for more.
 
 ## Dates
 
-See the [lubridate library](https://lubridate.tidyverse.org/).
+See the [dates chapter in R4DS](https://r4ds.had.co.nz/dates-and-times.html).
 
 ## Finding the type of a variable
 

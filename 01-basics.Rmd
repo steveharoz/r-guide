@@ -1,4 +1,4 @@
-# Variables, Math, Comparisons, and Strings
+# Variables, Math, and Comparisons
 
 ## Help
 
@@ -123,59 +123,3 @@ TRUE | FALSE
 ```
 
 There's `&` and `&&`. You usually want just `&`.
-
-## Strings
-
-Strings are not arrays in R, so array techniques may not work on strings.
-
-String length
-
-```{r}
-nchar('hello world')
-```
-
-Substring
-
-```{r}
-substring('hello world', 2, 10)
-```
-
-Comparison
-
-```{r tidy=FALSE}
-'hello' == "hello"
-```
-
-### Strings with special characters
-
-If you want to use special characters in a string, you need to "escape it" by adding `\`
-
-```{r}
-"string with backslashes \\, double quote \", and unicode \u263A"
-```
-
-Or you can use the literal `r"(text)"` which is useful for a Windows path or regular expression
-
-```{r}
-r"(c:\hello\world)"
-```
-
-### String Concatenation
-
-Concatenate with a space in between
-
-```{r}
-paste('hello', 'world')
-```
-
-Use a different separator
-
-```{r}
-paste('hello', 'world', sep='_')
-```
-
-No separator
-
-```{r}
-paste('hello', 'world', sep='')
-```

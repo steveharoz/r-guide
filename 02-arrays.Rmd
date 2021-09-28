@@ -54,7 +54,7 @@ runif(n=5, min=0, max=1)
 rnorm(n=5, mean=0, sd=1)
 ```
 
-## Concatenation
+## Concatenate arrays
 
 An array made up of smaller arrays combines them. R doesn't seem to allow for an array of arrays.
 
@@ -155,6 +155,12 @@ LETTERS[1:5]
 
 ## Array operations
 
+Many functions in R are *vectorized*, so they apply to arrays.
+
+```{r}
+a * 2
+```
+
 Compare individual elements
 
 ```{r}
@@ -179,12 +185,6 @@ You can perform operations on the elements of two arrays **even if they are diff
 a = 1:5
 b = rep(1, 8)
 a + b
-```
-
-Because all variables are arrays, scalars work the same way:
-
-```{r}
-a + 1
 ```
 
 ## Array functions

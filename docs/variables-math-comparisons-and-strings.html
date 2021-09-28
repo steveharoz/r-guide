@@ -154,11 +154,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#math"><i class="fa fa-check"></i><b>1.5</b> Math</a></li>
 <li class="chapter" data-level="1.6" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#comparisons"><i class="fa fa-check"></i><b>1.6</b> Comparisons</a></li>
 <li class="chapter" data-level="1.7" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#boolean"><i class="fa fa-check"></i><b>1.7</b> Boolean</a></li>
-<li class="chapter" data-level="1.8" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#strings"><i class="fa fa-check"></i><b>1.8</b> Strings</a>
-<ul>
-<li class="chapter" data-level="1.8.1" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#strings-with-special-characters"><i class="fa fa-check"></i><b>1.8.1</b> Strings with special characters</a></li>
-<li class="chapter" data-level="1.8.2" data-path="variables-math-comparisons-and-strings.html"><a href="variables-math-comparisons-and-strings.html#string-concatenation"><i class="fa fa-check"></i><b>1.8.2</b> String Concatenation</a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="arrays.html"><a href="arrays.html"><i class="fa fa-check"></i><b>2</b> Arrays</a>
 <ul>
@@ -177,9 +172,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="types.html"><a href="types.html"><i class="fa fa-check"></i><b>3</b> Types</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="types.html"><a href="types.html#numbers"><i class="fa fa-check"></i><b>3.1</b> Numbers</a></li>
-<li class="chapter" data-level="3.2" data-path="types.html"><a href="types.html#strings-1"><i class="fa fa-check"></i><b>3.2</b> Strings</a>
+<li class="chapter" data-level="3.2" data-path="types.html"><a href="types.html#strings"><i class="fa fa-check"></i><b>3.2</b> Strings</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="types.html"><a href="types.html#concatenation-1"><i class="fa fa-check"></i><b>3.2.1</b> Concatenation</a></li>
+<li class="chapter" data-level="3.2.1" data-path="types.html"><a href="types.html#strings-with-special-characters"><i class="fa fa-check"></i><b>3.2.1</b> Strings with special characters</a></li>
+<li class="chapter" data-level="3.2.2" data-path="types.html"><a href="types.html#string-concatenation"><i class="fa fa-check"></i><b>3.2.2</b> String Concatenation</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="types.html"><a href="types.html#dates"><i class="fa fa-check"></i><b>3.3</b> Dates</a></li>
 <li class="chapter" data-level="3.4" data-path="types.html"><a href="types.html#finding-the-type-of-a-variable"><i class="fa fa-check"></i><b>3.4</b> Finding the type of a variable</a></li>
@@ -334,41 +330,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="variables-math-comparisons-and-strings.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="cn">TRUE</span></span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] FALSE</code></pre>
 <p>There’s <code>&amp;</code> and <code>&amp;&amp;</code>. You usually want just <code>&amp;</code>.</p>
-</div>
-<div id="strings" class="section level2" number="1.8">
-<h2><span class="header-section-number">1.8</span> Strings</h2>
-<p>Strings are not arrays in R, so array techniques may not work on strings.</p>
-<p>String length</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="variables-math-comparisons-and-strings.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(<span class="st">&#39;hello world&#39;</span>)</span></code></pre></div>
-<pre class="code_result"><code>#&gt; [1] 11</code></pre>
-<p>Substring</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="variables-math-comparisons-and-strings.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">substring</span>(<span class="st">&#39;hello world&#39;</span>, <span class="dv">2</span>, <span class="dv">10</span>)</span></code></pre></div>
-<pre class="code_result"><code>#&gt; [1] &quot;ello worl&quot;</code></pre>
-<p>Comparison</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="variables-math-comparisons-and-strings.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;hello&#39;</span> <span class="sc">==</span> <span class="st">&quot;hello&quot;</span></span></code></pre></div>
-<pre class="code_result"><code>#&gt; [1] TRUE</code></pre>
-<div id="strings-with-special-characters" class="section level3" number="1.8.1">
-<h3><span class="header-section-number">1.8.1</span> Strings with special characters</h3>
-<p>If you want to use special characters in a string, you need to “escape it” by adding <code>\</code></p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="variables-math-comparisons-and-strings.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;string with backslashes </span><span class="sc">\\</span><span class="st">, double quote </span><span class="sc">\&quot;</span><span class="st">, and unicode \u263A&quot;</span></span></code></pre></div>
-<pre class="code_result"><code>#&gt; [1] &quot;string with backslashes \\, double quote \&quot;, and unicode &lt;U+263A&gt;&quot;</code></pre>
-<p>Or you can use the literal <code>r"(text)"</code> which is useful for a Windows path or regular expression</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="variables-math-comparisons-and-strings.html#cb55-1" aria-hidden="true" tabindex="-1"></a>r<span class="st">&quot;(c:\hello\world)&quot;</span></span></code></pre></div>
-<pre class="code_result"><code>#&gt; [1] &quot;c:\\hello\\world&quot;</code></pre>
-</div>
-<div id="string-concatenation" class="section level3" number="1.8.2">
-<h3><span class="header-section-number">1.8.2</span> String Concatenation</h3>
-<p>Concatenate with a space in between</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="variables-math-comparisons-and-strings.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&#39;hello&#39;</span>, <span class="st">&#39;world&#39;</span>)</span></code></pre></div>
-<pre class="code_result"><code>#&gt; [1] &quot;hello world&quot;</code></pre>
-<p>Use a different separator</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="variables-math-comparisons-and-strings.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&#39;hello&#39;</span>, <span class="st">&#39;world&#39;</span>, <span class="at">sep=</span><span class="st">&#39;_&#39;</span>)</span></code></pre></div>
-<pre class="code_result"><code>#&gt; [1] &quot;hello_world&quot;</code></pre>
-<p>No separator</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="variables-math-comparisons-and-strings.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&#39;hello&#39;</span>, <span class="st">&#39;world&#39;</span>, <span class="at">sep=</span><span class="st">&#39;&#39;</span>)</span></code></pre></div>
-<pre class="code_result"><code>#&gt; [1] &quot;helloworld&quot;</code></pre>
 
-</div>
 </div>
 </div>
             </section>
