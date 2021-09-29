@@ -24,7 +24,7 @@ e = "hello world"
 e = 'hello world' # same as double quote
 ```
 
-*Note: No semi colon or "var" needed*
+*Note: No semicolon or "var" needed*
 
 You'll sometimes see `a <- 6` instead of `a = 6`. Just use `=`. Some people insist on using `<-`. They are silly.
 

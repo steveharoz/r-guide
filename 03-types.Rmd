@@ -181,7 +181,7 @@ Missing values are very common in datasets.
 is.na(c(NA, 1, ""))
 ```
 
-Any operation performed on NA will also yield NA. So, you can still operate on arrays with missing values.
+Any operation performed on NA will also yield NA. So, you can operate on arrays with missing values.
 
 ```{r}
 c(5, NA, 7) + 1

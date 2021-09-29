@@ -351,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Missing values are very common in datasets.</p>
 <div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="types.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(<span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">1</span>, <span class="st">&quot;&quot;</span>))</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1]  TRUE FALSE FALSE</code></pre>
-<p>Any operation performed on NA will also yield NA. So, you can still operate on arrays with missing values.</p>
+<p>Any operation performed on NA will also yield NA. So, you can operate on arrays with missing values.</p>
 <div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="types.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">5</span>, <span class="cn">NA</span>, <span class="dv">7</span>) <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1]  6 NA  8</code></pre>
 <p>Be careful about aggregation functions like <code>min()</code>, <code>max()</code>, and <code>mean()</code>. To ignore NAs, use the <code>na.rm</code> parameter.</p>
