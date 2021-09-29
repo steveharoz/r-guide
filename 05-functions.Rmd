@@ -37,7 +37,7 @@ addOne(1:5)
 
 All parameters are pass-by-value because functions are immutable.
 
-```{r}
+```{r, collapse = TRUE}
 a = 5
 foo = function (a) {
   a = 6
@@ -54,7 +54,7 @@ print(paste("After the function: ", a))
 
 When you assign a value inside a function, it creates a local variable in the scope of the function. You can't access the global variable inside the function. (OK, you can, but the syntax is so obnoxious that I pretend it doesn't exist)
 
-```{r}
+```{r, collapse = TRUE}
 a = 5
 foo = function () {
   a = 6
@@ -65,7 +65,7 @@ foo = function () {
 print(paste("Before the function a =", a))
 foo()
 print(paste("After the function a =", a))
-#trying to use `b` will cause an error because it is out of scope
+#trying to use `b` here will cause an error because it is out of scope
 ```
 
 
@@ -93,7 +93,7 @@ bar = function(a, ...) {
   return(foo(a, ...))
 }
 bar(50, 10)
-bar(b = 10, 50) # named works too
+bar(b = 10, 50) # named parameter works too
 ```
 
 ## Operators
@@ -103,6 +103,5 @@ Operators like `+` or `-` or even `[` are all functions. To use them like a func
 ```{r}
 `+`(3, 4)
 `*`(3, 4)
-`[`(5:10, 2) # you don't need the close bracket (])
+`[`(5:10, 2) # you don't need the close bracket ]
 ```
-
