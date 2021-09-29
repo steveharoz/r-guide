@@ -17,13 +17,21 @@ x = 5 # no decimal but still a double
 y = x + 1
 ```
 
+Most types can be checked with `is.[type]()` and can be converted with `as.[type]()`.
+
+```{r}
+is.numeric(5)
+is.numeric("5") # a string is not a numeric
+as.numeric("5") # convert the string to a number
+```
+
 Good ol' float point comparison
 
 ```{r}
 x = .58
 y = .08
 x - y == 0.5
-round(x-y, digits=1) == round(0.5, digits=1)
+near(x-y, 0.5) # checks if numbers are very close
 ```
 
 Numeric division returns a double
@@ -44,12 +52,18 @@ Single and double quotes are the same in R, but a given string needs the same in
 'double quote " in a string'
 ```
 
+R calls a string, a "character". Notice that it doesn't call a number, a "digit".
+
+```{r}
+is.character("hwllo world")
+```
+
 Strings are not character arrays in R, so array techniques may not work as expected.
 
 String length
 
 ```{r}
-length('hello world') # R sees this is one string, not many charaters
+length('hello world') # R sees this is one string, not many characters
 str_length('hello world') # the actual length of the string
 ```
 
@@ -98,6 +112,12 @@ No separator
 ```{r}
 paste('hello', 'world', sep='')
 paste0('hello', 'world') # a shortcut function for no separator
+```
+
+Combine a set of strings into one
+
+```{r}
+paste(c("apple", "orange", "banana"), collapse = ", ")
 ```
 
 See the [strings chapter in R4DS](https://r4ds.had.co.nz/strings.html) for more.
