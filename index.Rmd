@@ -30,7 +30,9 @@ People who have offered helpful suggestions: [\@pietroppeter](https://github.com
 <br/>
 <br/>
 
+<div style="background:#80808018; padding:0.5em"><p style="margin:0">
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" style="float: left; margin: 0.5em 1em 0 0;"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/3.0/us/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License</a>.
+</p></div>
 
 # Prerequisites {.unnumbered}
 
