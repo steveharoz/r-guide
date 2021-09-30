@@ -2,5 +2,6 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: "Chapter "
+rmd_subdir: ["chapters/"]
 output_dir: "docs"
 before_chapter_script: "_common.R"
