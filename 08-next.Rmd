@@ -1,0 +1,5 @@
+# What Next? {.unnumbered}
+
+This book is far from a complete guide to R. But it can continue to be a reference to quickly look up commonly needed syntax. The quirks of R are easy to forget if you don't use them frequently, especially if you're more familiar with other programming languages like C, javascript, or python.
+
+The next book I recommend is [R for Data Science (R4DS)](https://r4ds.had.co.nz). It will walk you through working with data in R: reading files, cleaning data, making graphs, and a bit of modelling. I purposefully tried to minimize overlap with R4DS, so consider this book a companion to it.
