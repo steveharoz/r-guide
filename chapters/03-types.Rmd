@@ -1,6 +1,6 @@
 # Types
 
-For this chapter, you'll need to load the tidyverse library. [More on libraries](libraries-and-packages.html)
+For this chapter, you'll need to load the tidyverse library. [More on libraries](libraries-and-packages.html).
 
 R is dramatic and gives "conflict" messages that look like errors. Ignore them.
 
@@ -55,7 +55,7 @@ Single and double quotes are the same in R, but a given string needs the same in
 R calls a string, a "character". Notice that it doesn't call a number, a "digit".
 
 ```{r}
-is.character("hwllo world")
+is.character("hello world")
 ```
 
 Strings are not character arrays in R, so array techniques may not work as expected.
@@ -126,11 +126,6 @@ See the [strings chapter in R4DS](https://r4ds.had.co.nz/strings.html) for more.
 
 See the [dates chapter in R4DS](https://r4ds.had.co.nz/dates-and-times.html).
 
-## Finding the type of a variable
-
-```{r}
-class(c(5, 'hi', TRUE))
-```
 
 ## Checking the type
 
@@ -144,6 +139,12 @@ Remember, arrays are the same as single values.
 
 ```{r}
 class(1:5)
+```
+
+An array with multiple types converts the elements to the most abstract type
+
+```{r}
+class(c(5, 'hi', TRUE))
 ```
 
 Test if numeric

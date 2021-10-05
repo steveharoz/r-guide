@@ -178,11 +178,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.2" data-path="types.html"><a href="types.html#string-concatenation"><i class="fa fa-check"></i><b>3.2.2</b> String Concatenation</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="types.html"><a href="types.html#dates"><i class="fa fa-check"></i><b>3.3</b> Dates</a></li>
-<li class="chapter" data-level="3.4" data-path="types.html"><a href="types.html#finding-the-type-of-a-variable"><i class="fa fa-check"></i><b>3.4</b> Finding the type of a variable</a></li>
-<li class="chapter" data-level="3.5" data-path="types.html"><a href="types.html#checking-the-type"><i class="fa fa-check"></i><b>3.5</b> Checking the type</a></li>
-<li class="chapter" data-level="3.6" data-path="types.html"><a href="types.html#converting-and-parsing"><i class="fa fa-check"></i><b>3.6</b> Converting and parsing</a></li>
-<li class="chapter" data-level="3.7" data-path="types.html"><a href="types.html#missing-values-na"><i class="fa fa-check"></i><b>3.7</b> Missing values (NA)</a></li>
-<li class="chapter" data-level="3.8" data-path="types.html"><a href="types.html#factor"><i class="fa fa-check"></i><b>3.8</b> Factor</a></li>
+<li class="chapter" data-level="3.4" data-path="types.html"><a href="types.html#checking-the-type"><i class="fa fa-check"></i><b>3.4</b> Checking the type</a></li>
+<li class="chapter" data-level="3.5" data-path="types.html"><a href="types.html#converting-and-parsing"><i class="fa fa-check"></i><b>3.5</b> Converting and parsing</a></li>
+<li class="chapter" data-level="3.6" data-path="types.html"><a href="types.html#missing-values-na"><i class="fa fa-check"></i><b>3.6</b> Missing values (NA)</a></li>
+<li class="chapter" data-level="3.7" data-path="types.html"><a href="types.html#factor"><i class="fa fa-check"></i><b>3.7</b> Factor</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="control-flow.html"><a href="control-flow.html"><i class="fa fa-check"></i><b>4</b> Control Flow</a>
 <ul>
@@ -229,7 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="types" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Types</h1>
-<p>For this chapter, you’ll need to load the tidyverse library. <a href="libraries-and-packages.html">More on libraries</a></p>
+<p>For this chapter, you’ll need to load the tidyverse library. <a href="libraries-and-packages.html">More on libraries</a>.</p>
 <p>R is dramatic and gives “conflict” messages that look like errors. Ignore them.</p>
 <div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="types.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <div id="numbers" class="section level2" number="3.1">
@@ -269,7 +268,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="types.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;double quote &quot; in a string&#39;</span></span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] &quot;double quote \&quot; in a string&quot;</code></pre>
 <p>R calls a string, a “character”. Notice that it doesn’t call a number, a “digit”.</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="types.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.character</span>(<span class="st">&quot;hwllo world&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="types.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.character</span>(<span class="st">&quot;hello world&quot;</span>)</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] TRUE</code></pre>
 <p>Strings are not character arrays in R, so array techniques may not work as expected.</p>
 <p>String length</p>
@@ -315,19 +314,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.3</span> Dates</h2>
 <p>See the <a href="https://r4ds.had.co.nz/dates-and-times.html">dates chapter in R4DS</a>.</p>
 </div>
-<div id="finding-the-type-of-a-variable" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Finding the type of a variable</h2>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="types.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="st">&#39;hi&#39;</span>, <span class="cn">TRUE</span>))</span></code></pre></div>
-<pre class="code_result"><code>#&gt; [1] &quot;character&quot;</code></pre>
-</div>
-<div id="checking-the-type" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Checking the type</h2>
+<div id="checking-the-type" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Checking the type</h2>
 <p>What’s the type?</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="types.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="types.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] &quot;numeric&quot;</code></pre>
 <p>Remember, arrays are the same as single values.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="types.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="types.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] &quot;integer&quot;</code></pre>
+<p>An array with multiple types converts the elements to the most abstract type</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="types.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="st">&#39;hi&#39;</span>, <span class="cn">TRUE</span>))</span></code></pre></div>
+<pre class="code_result"><code>#&gt; [1] &quot;character&quot;</code></pre>
 <p>Test if numeric</p>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="types.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] TRUE</code></pre>
@@ -338,8 +335,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="types.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.logical</span>(<span class="cn">TRUE</span>)</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] TRUE</code></pre>
 </div>
-<div id="converting-and-parsing" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Converting and parsing</h2>
+<div id="converting-and-parsing" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Converting and parsing</h2>
 <p>Parse or convert to numeric</p>
 <div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="types.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="fu">c</span>(<span class="st">&quot;5&quot;</span>, <span class="cn">TRUE</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">&quot;abc&quot;</span>))</span></code></pre></div>
 <pre class="code_result warning"><code>#&gt; Warning: NAs introduced by coercion</code></pre>
@@ -357,8 +354,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="types.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">2</span>)</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] FALSE  TRUE  TRUE</code></pre>
 </div>
-<div id="missing-values-na" class="section level2" number="3.7">
-<h2><span class="header-section-number">3.7</span> Missing values (NA)</h2>
+<div id="missing-values-na" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Missing values (NA)</h2>
 <p>Any type can have missing values.</p>
 <div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="types.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">5</span>))</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] &quot;numeric&quot;</code></pre>
@@ -372,8 +369,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="types.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="cn">NA</span>, <span class="dv">7</span>), <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] 6</code></pre>
 </div>
-<div id="factor" class="section level2" number="3.8">
-<h2><span class="header-section-number">3.8</span> Factor</h2>
+<div id="factor" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Factor</h2>
 <p>A factor is like an enum in other languages. It encodes strings as integers via a dictionary.</p>
 <p>Create an array with many repeating values</p>
 <div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="types.html#cb206-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;hello&quot;</span>, <span class="st">&quot;cruel&quot;</span>, <span class="st">&quot;world&quot;</span>), <span class="dv">12</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>

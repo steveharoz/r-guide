@@ -24,7 +24,6 @@ strings
 strings-with-special-characters
 string-concatenation
 dates
-finding-the-type-of-a-variable
 checking-the-type
 converting-and-parsing
 missing-values-na
