@@ -17,8 +17,8 @@ pre code {
 .book_cover { 
     display:block;
     clear: right;
-    float: right;
-    margin: 0 1rem 4rem 70px;
+    float: left;
+    margin: 0 4rem 4rem 0;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
 }
 
