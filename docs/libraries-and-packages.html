@@ -39,7 +39,7 @@ This guide assumes you are familiar with programming concepts but want to learn 
   
 <link rel="prev" href="lists.html"/>
 <link rel="next" href="what-next.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -204,7 +204,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="lists.html"><a href="lists.html#brackets-for-real"><i class="fa fa-check"></i><b>6.3</b> Brackets for real</a></li>
 <li class="chapter" data-level="6.4" data-path="lists.html"><a href="lists.html#names-and-values"><i class="fa fa-check"></i><b>6.4</b> Names and values</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="libraries-and-packages.html"><a href="libraries-and-packages.html"><i class="fa fa-check"></i><b>7</b> Libraries and packages</a></li>
+<li class="chapter" data-level="7" data-path="libraries-and-packages.html"><a href="libraries-and-packages.html"><i class="fa fa-check"></i><b>7</b> Libraries and packages</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="libraries-and-packages.html"><a href="libraries-and-packages.html#error_install"><i class="fa fa-check"></i><b>7.1</b> Errors when installing</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="libraries-and-packages.html"><a href="libraries-and-packages.html#restart"><i class="fa fa-check"></i><b>7.1.1</b> Restart?</a></li>
+<li class="chapter" data-level="7.1.2" data-path="libraries-and-packages.html"><a href="libraries-and-packages.html#locked-directory"><i class="fa fa-check"></i><b>7.1.2</b> Locked directory?</a></li>
+<li class="chapter" data-level="7.1.3" data-path="libraries-and-packages.html"><a href="libraries-and-packages.html#sources-compilation"><i class="fa fa-check"></i><b>7.1.3</b> Sources? Compilation?</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="what-next.html"><a href="what-next.html"><i class="fa fa-check"></i>What Next?</a></li>
 <li class="divider"></li>
 <li><a href="http://twitter.com/sharoz">by Steve Haroz</a> <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" target="blank">License: CC-BY-NC-ND</a></li> <!-- StatCounter --> <script type="text/javascript"> var sc_project=1771316; var sc_invisible=1; var sc_security="caf1424b"; var sc_remove_link=1; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><img class="statcounter" src="https://c.statcounter.com/1771316/0/caf1424b/1/"></div></noscript> <!-- End StatCounter -->
@@ -242,7 +250,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 #&gt; 1 John  guitar
 #&gt; 2 Paul  bass  
 #&gt; 3 Keith guitar</code></pre>
+<div id="error_install" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Errors when installing</h2>
+<p>Like a troll restricting access to a bridge, R will sometimes ask convoluted riddles when installing and especially when updating libraries.</p>
+<div id="restart" class="section level3" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Restart?</h3>
+<blockquote>
+<p>One or more of the packages to be updated are currently loaded. Restarting R prior to install is highly recommended.</p>
+<p>RStudio can restart R before installing the reuested packages. All work and data will be preserved during restart.</p>
+<p>Do you want to restart R prior to install?</p>
+<p><code>[Yes]</code><br />
+<code>[No]</code><br />
+<code>[Cancel]</code> &lt;– No one will blame you if you decide the complexity isn’t worth it</p>
+</blockquote>
+<p>The safer option is <code>[Yes]</code>, but you may end up in a ask-restart loop. So try <code>[Yes]</code>, but then click <code>[No]</code> if you’re asked a second time.</p>
+<p>You’ll have to reload your libraries afterwards by redoing any <code>library(mylibrary)</code> calls you’ve already made.</p>
+</div>
+<div id="locked-directory" class="section level3" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Locked directory?</h3>
+<blockquote>
+<p>Error in install.packages : ERROR: failed to lock directory …<br />
+Try removing ‘…/00LOCK’</p>
+</blockquote>
+<p>Unfortunately, R is <strong>not</strong> compatible with any sort of software that backs up your documents folder. That includes Dropbox, Google Drive, and several others. To work around the problem, either:</p>
+<ol style="list-style-type: decimal">
+<li>Delete the <code>00Lock</code> directory whenever R complains and retry.</li>
+<li>Close or turn off backups while using RStudio.</li>
+</ol>
+</div>
+<div id="sources-compilation" class="section level3" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Sources? Compilation?</h3>
+<blockquote>
+<p>Do you want to install from sources the package which needs compilation?</p>
+</blockquote>
+<p>Don’t worry if you’re confused. This convaluted question commonly stumps people. Here is a rephrasing:</p>
+<blockquote>
+<p>We don’t have the latest version of this package for your system. We can (1) try to compile the latest version from source code or (2) install a slightly older version. What would you like to do?</p>
+<p><code>[Yes]</code> = <code>[Try to compile and install new version]</code> This option is slow and can sometimes fail.<br />
+<code>[No]</code> = <code>[Install older version]</code> &lt;– You usually want this option.<br />
+<code>[Cancel]</code> = <code>[Don't install]</code> Choose this if you don’t think the libray is worth all this effort.</p>
+</blockquote>
 
+</div>
+</div>
 </div>
             </section>
 

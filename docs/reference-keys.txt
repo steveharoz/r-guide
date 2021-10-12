@@ -44,3 +44,7 @@ accessing-elements-in-a-list
 brackets-for-real
 names-and-values
 libraries-and-packages
+error_install
+restart
+locked-directory
+sources-compilation

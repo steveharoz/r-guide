@@ -13,7 +13,7 @@ pre code {
   white-space: inherit;
 }
 
-/* Steve */
+/* What Next */
 .book_cover { 
     display:block;
     clear: right;
@@ -22,6 +22,7 @@ pre code {
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
 }
 
+/* code and output */
 p + div.sourceCode {
   margin-top: -0.5em;
 }
@@ -33,7 +34,6 @@ div.sourceCode + .code_result, div.sourceCode + .code_result + .code_result {
 .code_result + p, div.sourceCode + .code_result + .code_result + p {
   margin-top: 1.5em !important;
 }
-
 
 .book .book-body .page-wrapper .page-inner section.normal div.sourceCode pre {
   border-top-left-radius: 5px;
@@ -53,3 +53,8 @@ div.sourceCode + .code_result, div.sourceCode + .code_result + .code_result {
 .book .book-summary ul.summary li li a {
   padding: 0 15px 10px 15px;
 }
+
+/* title page */
+#header .title { margin-bottom: 0; }
+.author, .date { display: inline-block; }
+.author:after { content: ', '; }

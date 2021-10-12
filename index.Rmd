@@ -23,7 +23,7 @@ This example-focused guide assumes you are familiar with programming concepts bu
 
 ## Acknowledgements {.unlisted .unnumbered}
 
-People who have offered helpful suggestions: [\@pietroppeter](https://github.com/pietroppeter)
+People who have given helpful suggestions: [\@pietroppeter](https://github.com/pietroppeter) and [Matthew Kay](https://twitter.com/mjskay).
 
 <br/>
 <br/>
@@ -41,3 +41,5 @@ The prerequisites in [R for Data Science](https://r4ds.had.co.nz/introduction.ht
 1.  Install R for [Windows](https://cloud.r-project.org/bin/windows/base/), [Mac](https://cloud.r-project.org/bin/macosx/), or your [variant of Linux](https://cloud.r-project.org/bin/linux/).
 2.  Install [RStudio](https://www.rstudio.com/products/rstudio/).
 3.  Run RStudio, and install the tidyverse by typing the following into the RStudio console: `install.packages("tidyverse")`
+
+Check out the [section on errors](#error_install) if you run into any problems installing the tidyverse.

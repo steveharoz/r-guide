@@ -18,3 +18,45 @@ If you only want to access one function or variable in a library without loading
 ```{r}
 dplyr::band_instruments
 ```
+
+## Errors when installing {#error_install}
+
+Like a troll restricting access to a bridge, R will sometimes ask convoluted riddles when installing and especially when updating libraries.
+
+### Restart?
+
+> One or more of the packages to be updated are currently loaded. Restarting R prior to install is highly recommended.
+>
+> RStudio can restart R before installing the reuested packages. All work and data will be preserved during restart.
+>
+> Do you want to restart R prior to install?
+>
+> `[Yes]`\
+> `[No]`\
+> `[Cancel]` \<-- No one will blame you if you decide the complexity isn't worth it
+
+The safer option is `[Yes]`, but you may end up in a ask-restart loop. So try `[Yes]`, but then click `[No]` if you're asked a second time.
+
+You'll have to reload your libraries afterwards by redoing any `library(mylibrary)` calls you've already made.
+
+### Locked directory?
+
+> Error in install.packages : ERROR: failed to lock directory ...\
+> Try removing '.../00LOCK'
+
+Unfortunately, R is **not** compatible with any sort of software that backs up your documents folder. That includes Dropbox, Google Drive, and several others. To work around the problem, either:
+
+1.  Delete the `00Lock` directory whenever R complains and retry.
+2.  Close or turn off backups while using RStudio.
+
+### Sources? Compilation?
+
+> Do you want to install from sources the package which needs compilation?
+
+Don't worry if you're confused. This convaluted question commonly stumps people. Here is a rephrasing:
+
+> We don't have the latest version of this package for your system. We can (1) try to compile the latest version from source code or (2) install a slightly older version. What would you like to do?
+>
+> `[Yes]` = `[Try to compile and install new version]` This option is slow and can sometimes fail.\
+> `[No]` = `[Install older version]` \<-- You usually want this option.\
+> `[Cancel]` = `[Don't install]` Choose this if you don't think the libray is worth all this effort.

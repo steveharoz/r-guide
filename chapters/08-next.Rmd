@@ -8,4 +8,4 @@ This book is far from a complete guide to R. But it can continue to be a referen
 
 <div style="clear: both;"><br/></div>
 
-[![ggplot2 cover](images/ggplot2.jpg){.book_cover style="width: 200px;"}](https://ggplot2-book.org)For an overview on making graphs in R, I recommend [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org). It goes through different graph types, how to combine them, scales, statistical summaries, multi-plot arrangements, aesthetics, and more.
+[![ggplot2 cover](images/ggplot2.jpg){.book_cover style="width: 200px;"}](https://ggplot2-book.org)For an overview on making graphs in R, I recommend [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org). It goes through different graph types, how to combine them, scales, statistical summaries, multi-plot arrangements, aesthetics, and more. Also, check out [solutions](https://ggplot2-book-solutions-3ed.netlify.app) to the book's exercises by Howard Baek.
