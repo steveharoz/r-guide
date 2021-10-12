@@ -2,10 +2,18 @@
 
 This book is far from a complete guide to R. But it can continue to be a reference to quickly look up commonly needed syntax. The quirks of R are easy to forget if you don't use them frequently, especially if you're more familiar with other programming languages like C, javascript, or python.
 
- <br/>
+<br/>
 
-[![R for Data Science book](images/r4ds.png){.book_cover style="width: 200px;"}](https://r4ds.had.co.nz)The next book I recommend is [R for Data Science (R4DS)](https://r4ds.had.co.nz). It will walk you through working with data in R: reading files, cleaning data, making graphs, and a bit of modelling. I purposefully tried to minimize overlap with R4DS, so consider this book a companion to it. 
+[![R for Data Science book](images/r4ds.png){.book_cover style="width: 200px;"}](https://r4ds.had.co.nz)The next book I recommend is [R for Data Science (R4DS)](https://r4ds.had.co.nz). It will walk you through working with data in R: reading files, cleaning data, making graphs, and a bit of modelling. I purposefully tried to minimize overlap with R4DS, so consider this book a companion to it.
 
-<div style="clear: both;"><br/></div>
+::: {style="clear: both;"}
+<br/>
+:::
 
 [![ggplot2 cover](images/ggplot2.jpg){.book_cover style="width: 200px;"}](https://ggplot2-book.org)For an overview on making graphs in R, I recommend [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org). It goes through different graph types, how to combine them, scales, statistical summaries, multi-plot arrangements, aesthetics, and more. Also, check out [solutions](https://ggplot2-book-solutions-3ed.netlify.app) to the book's exercises by Howard Baek.
+
+::: {style="clear: both;"}
+<br/>
+:::
+
+[![Statistical Rethinking](images/statistical_rethinking.png){.book_cover style="width: 200px;"}](https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/) If you want to learn Bayesian statistics and modelling, [Statistical Rethinking recoded](https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/) is highly recommended. The original book, [Statistical Rethinking](http://xcelab.net/rm/statistical-rethinking/), teaches with base-R examples, and Statistical Rethinking recoded has updated the book's examples for the tidyverse.
