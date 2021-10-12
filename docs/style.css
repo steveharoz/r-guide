@@ -47,5 +47,9 @@ div.sourceCode + .code_result, div.sourceCode + .code_result + .code_result {
   background: #f0f0f0;
 }
 .error, .message, .warning {
-  
+}
+
+/* TOC */
+.book .book-summary ul.summary li li a {
+  padding: 0 15px 10px 15px;
 }
