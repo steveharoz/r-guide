@@ -34,7 +34,7 @@ People who have given helpful suggestions: [\@pietroppeter](https://github.com/p
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" style="float: left; margin: 0.5em 1em 0 0;"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/3.0/us/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License</a>.
 </p></div>
 
-# Prerequisites {.unnumbered}
+# Prerequisites and starting up {.unnumbered}
 
 The prerequisites in [R for Data Science](https://r4ds.had.co.nz/introduction.html#prerequisites) are the same for this guide:
 
@@ -43,3 +43,22 @@ The prerequisites in [R for Data Science](https://r4ds.had.co.nz/introduction.ht
 3.  Run RStudio, and install the tidyverse by typing the following into the RStudio console: `install.packages("tidyverse")`
 
 Check out the [section on errors](#error_install) if you run into any problems installing the tidyverse.
+
+## Run Rstudio {.unlisted .unnumbered}
+
+Whenever people talk about using R, they usually are referring to RStudio or a similar IDE. Don't bother with the weird GUI that comes with R.
+
+## Working in a saveable file {.unlisted .unnumbered}
+
+Writing code directly in the console gets annoying really quickly. So make a new R file for your code.
+
+In RStudio, go to `File` -> `New File` -> `R Script`
+
+You can now type and edit code in the file. To run a line, select it and press `Ctrl`+`enter` (PC) or `cmd`+`enter` (Mac).
+
+Try copying this code into the file (not the console) and running it:
+
+```{r}
+2 + 3
+```
+

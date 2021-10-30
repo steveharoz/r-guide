@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Succinct Intro to R</title>
+  <title>Prerequisites and starting up | A Succinct Intro to R</title>
   <meta name="description" content="<p>This book is a short introduction to the R language.
 It covers the basics of R and is intended as a prequal to analysis and visualization guides like “R for Data Science”.
 This guide assumes you are familiar with programming concepts but want to learn the R language specifically.</p>" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Succinct Intro to R" />
+  <meta property="og:title" content="Prerequisites and starting up | A Succinct Intro to R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://r-guide.steveharoz.com/" />
   
@@ -20,7 +20,7 @@ This guide assumes you are familiar with programming concepts but want to learn 
   <meta name="github-repo" content="steveharoz/r-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Succinct Intro to R" />
+  <meta name="twitter:title" content="Prerequisites and starting up | A Succinct Intro to R" />
   
   <meta name="twitter:description" content="<p>This book is a short introduction to the R language.
 It covers the basics of R and is intended as a prequal to analysis and visualization guides like “R for Data Science”.
@@ -37,8 +37,8 @@ This guide assumes you are familiar with programming concepts but want to learn 
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="prerequisites-and-starting-up.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="variables-math-and-comparisons.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -234,27 +234,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">A Succinct Intro to R</h1>
-<p class="author"><em><a href='https://twitter.com/sharoz'>Steve Haroz</a></em></p>
-<p class="date"><em>2021</em></p>
+<div id="prerequisites-and-starting-up" class="section level1 unnumbered">
+<h1>Prerequisites and starting up</h1>
+<p>The prerequisites in <a href="https://r4ds.had.co.nz/introduction.html#prerequisites">R for Data Science</a> are the same for this guide:</p>
+<ol style="list-style-type: decimal">
+<li>Install R for <a href="https://cloud.r-project.org/bin/windows/base/">Windows</a>, <a href="https://cloud.r-project.org/bin/macosx/">Mac</a>, or your <a href="https://cloud.r-project.org/bin/linux/">variant of Linux</a>.</li>
+<li>Install <a href="https://www.rstudio.com/products/rstudio/">RStudio</a>.</li>
+<li>Run RStudio, and install the tidyverse by typing the following into the RStudio console: <code>install.packages("tidyverse")</code></li>
+</ol>
+<p>Check out the <a href="libraries-and-packages.html#error_install">section on errors</a> if you run into any problems installing the tidyverse.</p>
+<div id="run-rstudio" class="section level2 unlisted unnumbered">
+<h2>Run Rstudio</h2>
+<p>Whenever people talk about using R, they usually are referring to RStudio or a similar IDE. Don’t bother with the weird GUI that comes with R.</p>
 </div>
-<div id="about" class="section level1 unnumbered">
-<h1>About</h1>
-<p>This book is a short introduction to the R language. It covers the basics of R that are not covered by analysis and visualization guides like <a href="https://r4ds.had.co.nz">R for Data Science</a>. Consider it a quick way to get up to speed on R before diving into the analysis and visualization aspects.</p>
-<p>This example-focused guide assumes you are familiar with programming concepts but want to learn the R language. It offers more examples than an “R cheat sheet” without the verbosity of a language spec or an introduction to programming.</p>
-<div id="acknowledgements" class="section level2 unlisted unnumbered">
-<h2>Acknowledgements</h2>
-<p>People who have given helpful suggestions: <a href="https://github.com/pietroppeter">@pietroppeter</a> and <a href="https://twitter.com/mjskay">Matthew Kay</a>.</p>
-<p><br/>
-<br/>
-<br/>
-<br/></p>
-<div style="background:#80808018; padding:0.5em">
-<p style="margin:0">
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/" style="float: left; margin: 0.5em 1em 0 0;"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/3.0/us/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License</a>.
-</p>
-</div>
+<div id="working-in-a-saveable-file" class="section level2 unlisted unnumbered">
+<h2>Working in a saveable file</h2>
+<p>Writing code directly in the console gets annoying really quickly. So make a new R file for your code.</p>
+<p>In RStudio, go to <code>File</code> -&gt; <code>New File</code> -&gt; <code>R Script</code></p>
+<p>You can now type and edit code in the file. To run a line, select it and press <code>Ctrl</code>+<code>enter</code> (PC) or <code>cmd</code>+<code>enter</code> (Mac).</p>
+<p>Try copying this code into the file (not the console) and running it:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="prerequisites-and-starting-up.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span></code></pre></div>
+<pre class="code_result"><code>#&gt; [1] 5</code></pre>
+
 </div>
 </div>
             </section>
@@ -262,8 +263,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="prerequisites-and-starting-up.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="variables-math-and-comparisons.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -10,7 +10,7 @@ arrays
 everything-is-an-array
 creation
 array-generators
-concatenate-arrays
+combining-arrays
 indexing
 sampling-from-an-array
 array-constants

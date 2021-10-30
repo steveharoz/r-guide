@@ -54,13 +54,13 @@ runif(n=5, min=0, max=1)
 rnorm(n=5, mean=0, sd=1)
 ```
 
-## Concatenate arrays
+## Combining arrays
 
-An array made up of smaller arrays combines them. R doesn't seem to allow for an array of arrays.
+An array made up of smaller arrays concatenates them. R doesn't seem to allow for an array of arrays.
 
 ```{r}
 x = 1:3
-y = c(10, 11)
+y = c(10, 11) # arrays of arrays get flattened
 z = 500
 
 c(x, y, z)
@@ -110,7 +110,7 @@ Any order or number of repetitions
 a[c(2, 4, 6, 6, 6)]
 ```
 
-specify values using booleans (keep this in mind for the "Array operations" section)
+Specify values to keep or drop using booleans (keep this in mind for the "Array operations" section)
 
 ```{r}
 a[c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE)]
@@ -204,9 +204,19 @@ rev(1:5)
 Math
 
 ```{r}
+sum(1:5)
 min(1:5)
 max(1:5)
-sum(1:5)
+```
+
+`min()` and `max()` are not vectorized. They only return one value.
+```{r}
+max(1:5, 11:15, 21:25)
+```
+
+For a vectorized min and max, use `pmin()` and `pmax()`. P does not stand for "vectorized", but let's pretend it does.
+```{r}
+pmax(1:5, 11:15, 21:25)
 ```
 
 ## Array sorting

@@ -144,7 +144,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
-<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="prerequisites-and-starting-up.html"><a href="prerequisites-and-starting-up.html"><i class="fa fa-check"></i>Prerequisites and starting up</a></li>
 <li class="chapter" data-level="1" data-path="variables-math-and-comparisons.html"><a href="variables-math-and-comparisons.html"><i class="fa fa-check"></i><b>1</b> Variables, Math, and Comparisons</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="variables-math-and-comparisons.html"><a href="variables-math-and-comparisons.html#help"><i class="fa fa-check"></i><b>1.1</b> Help</a></li>
@@ -160,7 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="arrays.html"><a href="arrays.html#everything-is-an-array"><i class="fa fa-check"></i><b>2.1</b> Everything is an array</a></li>
 <li class="chapter" data-level="2.2" data-path="arrays.html"><a href="arrays.html#creation"><i class="fa fa-check"></i><b>2.2</b> Creation</a></li>
 <li class="chapter" data-level="2.3" data-path="arrays.html"><a href="arrays.html#array-generators"><i class="fa fa-check"></i><b>2.3</b> Array generators</a></li>
-<li class="chapter" data-level="2.4" data-path="arrays.html"><a href="arrays.html#concatenate-arrays"><i class="fa fa-check"></i><b>2.4</b> Concatenate arrays</a></li>
+<li class="chapter" data-level="2.4" data-path="arrays.html"><a href="arrays.html#combining-arrays"><i class="fa fa-check"></i><b>2.4</b> Combining arrays</a></li>
 <li class="chapter" data-level="2.5" data-path="arrays.html"><a href="arrays.html#indexing"><i class="fa fa-check"></i><b>2.5</b> Indexing</a></li>
 <li class="chapter" data-level="2.6" data-path="arrays.html"><a href="arrays.html#sampling-from-an-array"><i class="fa fa-check"></i><b>2.6</b> Sampling from an Array</a></li>
 <li class="chapter" data-level="2.7" data-path="arrays.html"><a href="arrays.html#array-constants"><i class="fa fa-check"></i><b>2.7</b> Array constants</a></li>
@@ -240,46 +240,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="if" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> If</h2>
 <p>Simple if</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="control-flow.html#cb216-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="cn">TRUE</span></span>
-<span id="cb216-2"><a href="control-flow.html#cb216-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a)  </span>
-<span id="cb216-3"><a href="control-flow.html#cb216-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;a is TRUE&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="control-flow.html#cb222-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="cn">TRUE</span></span>
+<span id="cb222-2"><a href="control-flow.html#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a)  </span>
+<span id="cb222-3"><a href="control-flow.html#cb222-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;a is TRUE&quot;</span>)</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] &quot;a is TRUE&quot;</code></pre>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="control-flow.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="co"># conditionally run multiple expressions</span></span>
-<span id="cb218-2"><a href="control-flow.html#cb218-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a) {</span>
-<span id="cb218-3"><a href="control-flow.html#cb218-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;a is TRUE&quot;</span>)</span>
-<span id="cb218-4"><a href="control-flow.html#cb218-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;a is TRUE&quot;</span>)</span>
-<span id="cb218-5"><a href="control-flow.html#cb218-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="control-flow.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="co"># conditionally run multiple expressions</span></span>
+<span id="cb224-2"><a href="control-flow.html#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a) {</span>
+<span id="cb224-3"><a href="control-flow.html#cb224-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;a is TRUE&quot;</span>)</span>
+<span id="cb224-4"><a href="control-flow.html#cb224-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;a is TRUE&quot;</span>)</span>
+<span id="cb224-5"><a href="control-flow.html#cb224-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] &quot;a is TRUE&quot;
 #&gt; [1] &quot;a is TRUE&quot;</code></pre>
 <p>If Else</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="control-flow.html#cb220-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">5</span></span>
-<span id="cb220-2"><a href="control-flow.html#cb220-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">8</span></span>
-<span id="cb220-3"><a href="control-flow.html#cb220-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> y) {</span>
-<span id="cb220-4"><a href="control-flow.html#cb220-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is greater than y&quot;</span>)</span>
-<span id="cb220-5"><a href="control-flow.html#cb220-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb220-6"><a href="control-flow.html#cb220-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is less than or equal to y&quot;</span>)</span>
-<span id="cb220-7"><a href="control-flow.html#cb220-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="control-flow.html#cb226-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb226-2"><a href="control-flow.html#cb226-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">8</span></span>
+<span id="cb226-3"><a href="control-flow.html#cb226-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> y) {</span>
+<span id="cb226-4"><a href="control-flow.html#cb226-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is greater than y&quot;</span>)</span>
+<span id="cb226-5"><a href="control-flow.html#cb226-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb226-6"><a href="control-flow.html#cb226-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is less than or equal to y&quot;</span>)</span>
+<span id="cb226-7"><a href="control-flow.html#cb226-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] &quot;x is less than or equal to y&quot;</code></pre>
 <p>The <code>ifelse</code> function is the way to handle vector operations. It is like a vectorized version of <code>? :</code> in C or javascript.</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="control-flow.html#cb222-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb222-2"><a href="control-flow.html#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>, <span class="st">&quot;even&quot;</span>, <span class="st">&quot;odd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="control-flow.html#cb228-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb228-2"><a href="control-flow.html#cb228-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>, <span class="st">&quot;even&quot;</span>, <span class="st">&quot;odd&quot;</span>)</span></code></pre></div>
 <pre class="code_result"><code>#&gt;  [1] &quot;odd&quot;  &quot;even&quot; &quot;odd&quot;  &quot;even&quot; &quot;odd&quot;  &quot;even&quot; &quot;odd&quot;  &quot;even&quot; &quot;odd&quot;  &quot;even&quot;</code></pre>
 </div>
 <div id="while" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> While</h2>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="control-flow.html#cb224-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
-<span id="cb224-2"><a href="control-flow.html#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (x <span class="sc">&lt;</span> <span class="fl">0.95</span>) {</span>
-<span id="cb224-3"><a href="control-flow.html#cb224-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
-<span id="cb224-4"><a href="control-flow.html#cb224-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="control-flow.html#cb230-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb230-2"><a href="control-flow.html#cb230-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (x <span class="sc">&lt;</span> <span class="fl">0.95</span>) {</span>
+<span id="cb230-3"><a href="control-flow.html#cb230-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb230-4"><a href="control-flow.html#cb230-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="for" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> For</h2>
 <p>For works like foreach in other languages.</p>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="control-flow.html#cb225-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
-<span id="cb225-2"><a href="control-flow.html#cb225-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> a) {</span>
-<span id="cb225-3"><a href="control-flow.html#cb225-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">95</span>)</span>
-<span id="cb225-4"><a href="control-flow.html#cb225-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(x)</span>
-<span id="cb225-5"><a href="control-flow.html#cb225-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="control-flow.html#cb231-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
+<span id="cb231-2"><a href="control-flow.html#cb231-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> a) {</span>
+<span id="cb231-3"><a href="control-flow.html#cb231-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">95</span>)</span>
+<span id="cb231-4"><a href="control-flow.html#cb231-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(x)</span>
+<span id="cb231-5"><a href="control-flow.html#cb231-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre class="code_result"><code>#&gt; [1] 97.59641
 #&gt; [1] 97.67089
 #&gt; [1] 95.54705</code></pre>
