@@ -16,4 +16,4 @@ This book is far from a complete guide to R. But it can continue to be a referen
 <br/>
 :::
 
-[![Statistical Rethinking](images/statistical_rethinking.png){.book_cover style="width: 200px;"}](https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/) If you want to learn Bayesian statistics and modelling, [Statistical Rethinking recoded](https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/) is highly recommended. The original book, [Statistical Rethinking](http://xcelab.net/rm/statistical-rethinking/), teaches with base-R examples, and Statistical Rethinking recoded has updated the book's examples for the tidyverse.
+[![Statistical Rethinking](images/statistical_rethinking.png){.book_cover style="width: 200px;"}](https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/) If you want to learn Bayesian statistics and modelling, [Statistical Rethinking recoded](https://bookdown.org/content/3686/) is highly recommended. The original book, [Statistical Rethinking](http://xcelab.net/rm/statistical-rethinking/), teaches with base-R examples, and Statistical Rethinking recoded has updated the book's examples for the tidyverse.
